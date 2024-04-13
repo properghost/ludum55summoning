@@ -51,7 +51,7 @@ public class GoblinAI : MonoBehaviour
     {
         if(collision.gameObject.tag == "Knight")
         {
-            currentHealth -= 1f;
+            currentHealth -= 0.01f;
         }
     }
    
