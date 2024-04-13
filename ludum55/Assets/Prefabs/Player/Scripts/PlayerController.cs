@@ -19,6 +19,6 @@ public class PlayerController : MonoBehaviour
     {
         speedX = Input.GetAxisRaw("Horizontal") * moveSpeed;
         speedY = Input.GetAxisRaw("Vertical") * moveSpeed;
-        rb.velocity = new Vector3(speedX, speedY, 0);
+        rb.velocity = new Vector3(speedX, speedY, 0).normalized;
     }
 }
