@@ -75,6 +75,17 @@ public class SummonSystem : MonoBehaviour
             if(runeVal == 35 && Input.GetKeyDown(KeyCode.Space))
             {
                 Instantiate(torchGoblin, transform.position, transform.rotation);
+                runeOne = false;
+                runeTwo = false;
+                runeThree = false;
+                alRune = false;
+                gamRune = false;
+                bazRune = false;
+                alRuneUsed = false;
+                gamRuneUsed = false;
+                bazRuneUsed = false;
+
+                runeVal = 1f;
             }
         }
 
