@@ -33,5 +33,6 @@ public class SummonSystem : MonoBehaviour
         {
             runeThree = true;
         }
+        
     }
 }
