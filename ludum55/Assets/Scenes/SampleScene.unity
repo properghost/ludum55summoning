@@ -117316,9 +117316,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: maxMana
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: torchGoblin
       value: 
       objectReference: {fileID: 509376218994446940, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: alRuneManaCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: bazRuneManaCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: gamRuneManaCost
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: m_Name
       value: Player

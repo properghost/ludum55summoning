@@ -86,10 +86,41 @@ public class SummonSystem : MonoBehaviour
 
     private void ActivateRunes()
     {
-        if (runeOne && runeTwo && runeThree)
+        if (runeVal == 11 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0 || runeVal == 11 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
         {
-            // 1 - 2 - 3 SUMMON TORCH GOBLIN
-            if (runeVal == 35 && Input.GetKeyDown(KeyCode.Space))
+            // REPLENISH MANA / 3 + 2 + 1
+            currentMana = maxMana;
+            runeOne = false;
+            runeTwo = false;
+            runeThree = false;
+            alRune = false;
+            gamRune = false;
+            bazRune = false;
+            alRuneUsed = false;
+            gamRuneUsed = false;
+            bazRuneUsed = false;
+            runeVal = 1f;
+        }
+
+        if(currentMana <= 0 && Input.GetKeyDown(KeyCode.Space) && runeVal != 11)
+        {
+            // NOT ENOUGH MANA
+            runeOne = false;
+            runeTwo = false;
+            runeThree = false;
+            alRune = false;
+            gamRune = false;
+            bazRune = false;
+            alRuneUsed = false;
+            gamRuneUsed = false;
+            bazRuneUsed = false;
+
+            runeVal = 1f;
+        }
+        else if (runeOne && runeTwo && runeThree)
+        {
+            // SUMMON TORCH GOBLIN / 1 + 2 + 3
+            if (runeVal == 35 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
             {
                 Instantiate(torchGoblin, transform.position, transform.rotation);
                 runeOne = false;
@@ -105,23 +136,9 @@ public class SummonSystem : MonoBehaviour
                 runeVal = 1f;
             }
 
-            // 3 - 2 - 1 REPLENISH MANA
-            if (runeVal == 11 && Input.GetKeyDown(KeyCode.Space))
-            {
-                currentMana = maxMana;
-                runeOne = false;
-                runeTwo = false;
-                runeThree = false;
-                alRune = false;
-                gamRune = false;
-                bazRune = false;
-                alRuneUsed = false;
-                gamRuneUsed = false;
-                bazRuneUsed = false;
-
-                runeVal = 1f;
-            }
         }
+        
+        
     }
 
     private void AlRuneActivate()
@@ -145,16 +162,16 @@ public class SummonSystem : MonoBehaviour
         }
     }
     // SUMMON VALUES ----------------------
-    // 35
+    // 35 - SUMMON TORCH GOBLIN / 1 + 2 + 3
 
-    // 37
+    // 37 / 1 + 3 + 2
 
-    // 20
+    // 20 / 2 + 1 + 3
 
-    // 10
+    // 10 / 2 + 3 + 1 
 
-    // 17
+    // 17 / 3 + 1 + 2
 
-    // 11
+    // 11 - REPLENISH MANA / 3 + 2 + 1
     // SUMMON VALUES ----------------------
 }
