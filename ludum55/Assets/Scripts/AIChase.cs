@@ -17,6 +17,9 @@ public class AIChase : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player");
+        enemySpeed = 4f;
+        distanceBetween = 1;
     }
     void Update()
     {

@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 8458677345345758185}
   - component: {fileID: 5223377650840911763}
   - component: {fileID: 1228305091337591834}
+  - component: {fileID: 5213652704483032093}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2ef5ffea377fb4a87532f405b4b289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 10
 --- !u!50 &1228305091337591834
 Rigidbody2D:
   serializedVersion: 4
@@ -180,3 +181,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5213652704483032093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5496722659159951761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43af62487de85b54f8491700b73f3498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runeOne: 0
+  alRune: 0
+  alRuneUsed: 0
+  runeTwo: 0
+  gamRune: 0
+  gamRuneUsed: 0
+  runeThree: 0
+  bazRune: 0
+  bazRuneUsed: 0
+  runeVal: 0
+  alRuneVal: 0
+  gamRuneVal: 0
+  bazRuneVal: 0

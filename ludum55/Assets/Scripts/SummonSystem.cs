@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SummonSystem : MonoBehaviour
@@ -23,6 +24,8 @@ public class SummonSystem : MonoBehaviour
     public float alRuneVal;
     public float gamRuneVal;
     public float bazRuneVal;
+    //SummonPrefabs---------------------------
+    [SerializeField] private GameObject torchGoblin;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +68,14 @@ public class SummonSystem : MonoBehaviour
                 Invoke("BazRuneActivate", 0);
                 bazRuneUsed = true;
             }
+        }
 
+        if(runeOne && runeTwo && runeThree)
+        {
+            if(runeVal == 35 && Input.GetKeyDown(KeyCode.Space))
+            {
+                Instantiate(torchGoblin, transform.position, transform.rotation);
+            }
         }
 
         
