@@ -8,10 +8,10 @@ public class AIChase : MonoBehaviour
     public GameObject player;
     public float enemySpeed;
     public float distanceBetween;
-    [SerializeField] private Transform target;
-    private bool facingRight;
-    private float distance;
-    private float speed;
+    [SerializeField] internal Transform target;
+    internal bool facingRight;
+    internal float distance;
+    internal float speed;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class AIChase : MonoBehaviour
     {
          if (Vector3.Distance(target.position,transform.position)<20)
          {
-             transform.position=Vector2.MoveTowards(transform.position, target.position,speed * Time.deltaTime);
+             transform.position=Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
              if(target.position.x > transform.position.x && !facingRight) //if the target is to the right of enemy and the enemy is not facing right
                  Flip();
              if(target.position.x < transform.position.x && facingRight)
