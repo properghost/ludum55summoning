@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SummonSystem : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class SummonSystem : MonoBehaviour
     public float runeVal;
     public float maxMana;
     public float currentMana;
+    [SerializeField] private Slider manaSlider;
     //SummonPrefabs---------------------------
     [SerializeField] private GameObject torchGoblin;
 
@@ -38,13 +40,17 @@ public class SummonSystem : MonoBehaviour
         runeVal = 1f;
         maxMana = 100f;
         currentMana = maxMana;
+        manaSlider.maxValue = 100;
+        manaSlider.value = currentMana;
     }
 
     // Update is called once per frame
     void Update()
     {
+        manaSlider.value = currentMana;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            manaSlider.value = currentMana;
             currentMana -= alRuneManaCost;
             runeOne = true;
             alRune = true;
@@ -57,6 +63,7 @@ public class SummonSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            manaSlider.value = currentMana;
             currentMana -= gamRuneManaCost;
             runeTwo = true;
             gamRune = true;
@@ -70,6 +77,7 @@ public class SummonSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            manaSlider.value = currentMana;
             currentMana -= bazRuneManaCost;
             runeThree = true;
             bazRune = true;
@@ -88,6 +96,7 @@ public class SummonSystem : MonoBehaviour
     {
         if (runeVal == 11 && Input.GetKeyDown(KeyCode.Space))
         {
+            
             // REPLENISH MANA / 3 + 2 + 1
             currentMana = maxMana;
             runeOne = false;
