@@ -25,6 +25,7 @@ public class GoblinAI : MonoBehaviour
         enemySpeed = 4f;
         distanceBetween = 1;
         maxHealth = 100f;
+        currentHealth = maxHealth;
         healthSlider.maxValue = 100;
         healthSlider.value = maxHealth;
     }
@@ -40,18 +41,18 @@ public class GoblinAI : MonoBehaviour
             Flip();
         }
 
-        if(currentHealth >= 0f)
+        if(currentHealth <= 0f)
         {
             Destroy(gameObject, 0.01f);
         }
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.tag == "Knight")
         {
-            currentHealth -= 0.01f;
+            currentHealth = currentHealth - 2f * Time.deltaTime;
         }
     }
    
