@@ -20,6 +20,9 @@ public class SummonSystem : MonoBehaviour
     [SerializeField] private bool bazRuneUsed;
     //----------------------------------------
     public float runeVal;
+    public float alRuneVal;
+    public float gamRuneVal;
+    public float bazRuneVal;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,11 @@ public class SummonSystem : MonoBehaviour
             {
                 Invoke("AlRuneActivate", 0);
                 alRuneUsed = true;
+                if(bazRune && !gamRune)
+                {
+                bazRuneVal = 5;
+                }
+                else { bazRuneVal = 1f ;};
             }
         }
 
@@ -50,6 +58,11 @@ public class SummonSystem : MonoBehaviour
                 Invoke("GamRuneActivate", 0);
                 gamRuneUsed = true;
             }
+            if(alRune && !bazRune)
+                {
+                alRuneVal = 5;
+                }
+            else { alRuneVal = 2f ;};
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -63,6 +76,11 @@ public class SummonSystem : MonoBehaviour
             }
 
         }
+
+        if(bazRuneVal == 5)
+        {
+            runeVal = 10f;
+        }
     }
 
     private void AlRuneActivate()
@@ -71,10 +89,10 @@ public class SummonSystem : MonoBehaviour
     }
     private void GamRuneActivate()
     {
-        runeVal = runeVal * 2f;
+        runeVal = runeVal * (alRuneVal * 2f);
     }
     private void BazRuneActivate()
     {
-        runeVal = runeVal * 3f;
+        runeVal = runeVal * (bazRuneVal * 2f);
     }
 }
