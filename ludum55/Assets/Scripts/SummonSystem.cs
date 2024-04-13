@@ -58,11 +58,7 @@ public class SummonSystem : MonoBehaviour
                 Invoke("GamRuneActivate", 0);
                 gamRuneUsed = true;
             }
-            if(alRune && !bazRune)
-                {
-                alRuneVal = 5;
-                }
-            else { alRuneVal = 2f ;};
+
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -75,11 +71,6 @@ public class SummonSystem : MonoBehaviour
                 bazRuneUsed = true;
             }
 
-        }
-
-        if(bazRuneVal == 5)
-        {
-            runeVal = 10f;
         }
     }
 
