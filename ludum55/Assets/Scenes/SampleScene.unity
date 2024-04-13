@@ -117309,7 +117309,7 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_Sprite: {fileID: 889759218, guid: 0e7181816a02e9c41bbedf36cc36436a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.52, y: 0.6066667}
@@ -117348,6 +117348,7 @@ MonoBehaviour:
   player: {fileID: 522515700}
   enemySpeed: 4
   distanceBetween: 1
+  target: {fileID: 522515701}
 --- !u!50 &2096349514
 Rigidbody2D:
   serializedVersion: 4
