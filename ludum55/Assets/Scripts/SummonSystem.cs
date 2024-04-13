@@ -86,7 +86,7 @@ public class SummonSystem : MonoBehaviour
 
     private void ActivateRunes()
     {
-        if (runeVal == 11 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0 || runeVal == 11 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
+        if (runeVal == 11 && Input.GetKeyDown(KeyCode.Space))
         {
             // REPLENISH MANA / 3 + 2 + 1
             currentMana = maxMana;

@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 358514848765111797}
   - component: {fileID: 1842286818871049402}
   m_Layer: 0
-  m_Name: Torch_Blue_Frame_0
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
