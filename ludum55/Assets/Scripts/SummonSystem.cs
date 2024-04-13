@@ -19,12 +19,12 @@ public class SummonSystem : MonoBehaviour
     [SerializeField] private bool bazRune;
     [SerializeField] private bool bazRuneUsed;
     //----------------------------------------
-    public int runeVal;
+    public float runeVal;
 
     // Start is called before the first frame update
     void Start()
     {
-        runeVal = 0;
+        runeVal = 1f;
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class SummonSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             runeThree = true;
-            bazRuneUsed = true;
+            bazRune = true;
             if(bazRune && !bazRuneUsed)
             {
                 Invoke("BazRuneActivate", 0);
@@ -67,14 +67,14 @@ public class SummonSystem : MonoBehaviour
 
     private void AlRuneActivate()
     {
-        runeVal += 5;
+        runeVal += 5f;
     }
     private void GamRuneActivate()
     {
-        runeVal *= 2;
+        runeVal = runeVal * 2f;
     }
     private void BazRuneActivate()
     {
-        runeVal = runeVal * (runeVal / 4);
+        runeVal = runeVal * 3f;
     }
 }
