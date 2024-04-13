@@ -26,7 +26,7 @@ public class SummonSystem : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            runeTwo = true;
+            runeTwo = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
