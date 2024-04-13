@@ -19,17 +19,17 @@ public class SummonSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             runeOne = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             runeTwo = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             runeThree = true;
         }
