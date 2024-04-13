@@ -41,11 +41,6 @@ public class SummonSystem : MonoBehaviour
             {
                 Invoke("AlRuneActivate", 0);
                 alRuneUsed = true;
-                if(bazRune && !gamRune)
-                {
-                bazRuneVal = 5;
-                }
-                else { bazRuneVal = 1f ;};
             }
         }
 
@@ -58,11 +53,7 @@ public class SummonSystem : MonoBehaviour
                 Invoke("GamRuneActivate", 0);
                 gamRuneUsed = true;
             }
-            if(alRune && !bazRune)
-                {
-                alRuneVal = 5;
-                }
-            else { alRuneVal = 2f ;};
+
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -77,22 +68,42 @@ public class SummonSystem : MonoBehaviour
 
         }
 
-        if(bazRuneVal == 5)
-        {
-            runeVal = 10f;
-        }
+        
+
+
     }
 
     private void AlRuneActivate()
     {
-        runeVal += 5f;
+        runeVal = runeVal + 5f;
     }
     private void GamRuneActivate()
     {
-        runeVal = runeVal * (alRuneVal * 2f);
+        runeVal = runeVal * 2f;
+        if(runeOne && runeThree)
+        {
+            runeVal = runeVal + 1f;
+        }
     }
     private void BazRuneActivate()
     {
-        runeVal = runeVal * (bazRuneVal * 2f);
+        runeVal = runeVal * 3f;
+        if(runeThree && runeTwo)
+        {
+            runeVal = runeVal - 1f;
+        }
     }
+    // SUMMON VALUES ----------------------
+    // 35
+
+    // 37
+
+    // 20
+
+    // 10
+
+    // 17
+
+    // 11
+    // SUMMON VALUES ----------------------
 }
