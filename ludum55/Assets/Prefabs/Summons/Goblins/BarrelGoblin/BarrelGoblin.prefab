@@ -393,15 +393,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ae81428afa82a41b6ac8666421031b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4278593441355326603, guid: 220877bff83a4124391b8b838a4048fa, type: 3}
   enemySpeed: 1
   distanceBetween: 0.5
-  target: {fileID: 0}
+  target: {fileID: 4924192559168185394, guid: 220877bff83a4124391b8b838a4048fa, type: 3}
   goblinCurrentHealth: 100
   goblinMaxHealth: 100
-  healthDecayValue: 100
+  healthDecayValue: 30
   healthSlider: {fileID: 854578243525195024}
-  simpleKnight: {fileID: 0}
+  simpleKnight: {fileID: 4278593441355326603, guid: 220877bff83a4124391b8b838a4048fa, type: 3}
 --- !u!58 &4932902806649972711
 CircleCollider2D:
   m_ObjectHideFlags: 0

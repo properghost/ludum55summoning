@@ -23,8 +23,8 @@ public class BarelGoblinAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Knight").transform;
-        player = GameObject.FindGameObjectWithTag("Knight");
+        target = GameObject.FindGameObjectWithTag("TankKnight").transform;
+        player = GameObject.FindGameObjectWithTag("TankKnight");
         distanceBetween = 1;
         goblinMaxHealth = 100f;
         goblinCurrentHealth = goblinMaxHealth;
@@ -35,16 +35,16 @@ public class BarelGoblinAI : MonoBehaviour
     }
     void Update()
     {
-        particleExplosion.Play();
+
         goblinCurrentHealth -= Time.deltaTime * healthDecayValue;
         if(player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Knight");
+            player = GameObject.FindGameObjectWithTag("TankKnight");
         }
 
         if(target == null)
         {
-            target = GameObject.FindGameObjectWithTag("Knight").transform;
+            target = GameObject.FindGameObjectWithTag("TankKnight").transform;
         }
         healthSlider.value = goblinCurrentHealth;
         if (Vector3.Distance(target.position,transform.position)<20)
@@ -65,10 +65,11 @@ public class BarelGoblinAI : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Knight")
+        if (other.gameObject.tag == "TankKnight")
         {
+            particleExplosion.Play();
             Debug.Log("knight touched by knight, should damage");
-            target.GetComponent<AIChase>().knightCurrentHealth -= 20f;
+            target.GetComponent<TankChase>().knightCurrentHealth -= 1f;
         }
         
     }
