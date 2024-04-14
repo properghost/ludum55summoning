@@ -40,6 +40,9 @@ public class SummonSystem : MonoBehaviour
     [SerializeField] private float TNTGoblinManaCost;
     [SerializeField] private GameObject TNTGoblin;
     [SerializeField] private RawImage TNTGoblinPNG;
+    [SerializeField] private float BarrelGoblinManaCost;
+    [SerializeField] private GameObject BarrelGoblin;
+    [SerializeField] private RawImage BarrelGoblinPNG;
 
     // Start is called before the first frame update
     void Start()
@@ -111,6 +114,15 @@ public class SummonSystem : MonoBehaviour
         else if(runeVal != 37)
         {
             TNTGoblinPNG.enabled = false;
+        }
+
+        if(runeVal == 20)
+        {
+            BarrelGoblinPNG.enabled = true;
+        }
+        else if(runeVal != 20)
+        {
+            BarrelGoblinPNG.enabled = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -222,6 +234,27 @@ public class SummonSystem : MonoBehaviour
             }
 
         }
+
+        if (runeOne && runeTwo && runeThree)
+        {
+            // SUMMON BARREL GOBLIN / 2 + 1 + 3
+            if (runeVal == 20 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
+            {
+                Instantiate(BarrelGoblin, transform.position, transform.rotation);
+                runeOne = false;
+                runeTwo = false;
+                runeThree = false;
+                alRune = false;
+                gamRune = false;
+                bazRune = false;
+                alRuneUsed = false;
+                gamRuneUsed = false;
+                bazRuneUsed = false;
+
+                runeVal = 1f;
+                currentMana -= BarrelGoblinManaCost;
+            }
+        }
         
         
     }
@@ -251,7 +284,7 @@ public class SummonSystem : MonoBehaviour
 
     // 37 - SUMMON TNT GOBLIN / 1 + 3 + 2
 
-    // 20 / 2 + 1 + 3
+    // 20  - SUMMON BARREL GOBLIN / 2 + 1 + 3
 
     // 10 / 2 + 3 + 1 
 
