@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class SummonSystem : MonoBehaviour
     private bool alRune;
     private float alRuneVal;
     private bool alRuneUsed;
+    [SerializeField] private RawImage alRuneImage;
 
     //----------------------------------------
     //Rune Two
@@ -19,13 +21,13 @@ public class SummonSystem : MonoBehaviour
     private bool gamRune;
     private float gamRuneVal;
     private bool gamRuneUsed;
-
+    [SerializeField] private RawImage gamRuneImage;
     //----------------------------------------
     private bool runeThree;
     private bool bazRune;
     private float bazRuneVal;
     private bool bazRuneUsed;
-
+    [SerializeField] private RawImage bazRuneImage;
     //----------------------------------------
     public float runeVal;
     public float maxMana;
@@ -63,6 +65,35 @@ public class SummonSystem : MonoBehaviour
                 alRuneUsed = true;
             }
         }
+
+        if(!runeOne)
+        {
+            alRuneImage.enabled = false;
+        }
+        else if(runeOne)
+        {
+            alRuneImage.enabled = true;
+        }
+
+        if(!runeTwo)
+        {
+            gamRuneImage.enabled = false;
+        }
+        else if(runeTwo)
+        {
+            gamRuneImage.enabled = true;
+        }
+
+        if(!runeThree)
+        {
+            bazRuneImage.enabled= false;
+        }
+        else if(runeThree)
+        {
+            bazRuneImage.enabled = true;
+        }
+
+
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
