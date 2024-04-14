@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 0;
     public bool timeIsRunning = true;
     public TMP_Text timeText;
+    [SerializeField] float remainingTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,17 +23,16 @@ public class Timer : MonoBehaviour
         {
             if (timeRemaining >= 0)
             {
-                timeRemaining += Time.deltaTime;
+                timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
             }
         }
     }
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay +=1;
+        timeToDisplay -=Time.deltaTime;
         float minutes = Mathf.FloorToInt (timeToDisplay / 60);
         float seconds = Mathf.FloorToInt (timeToDisplay % 60);
         timeText.text = string.Format ("{0:00}:{1:00}", minutes, seconds);
-
     }
 }

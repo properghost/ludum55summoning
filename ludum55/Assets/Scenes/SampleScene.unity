@@ -378,9 +378,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b890d909dc039d4429b7cb13f0a53960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 0
+  timeRemaining: 600
   timeIsRunning: 0
   timeText: {fileID: 55843371}
+  remainingTime: 600
 --- !u!114 &55843371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: 10:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72a3df66a4045334dac866a427bfb32f, type: 2}
   m_sharedMaterial: {fileID: -7942546817858517480, guid: 72a3df66a4045334dac866a427bfb32f, type: 2}
