@@ -7,16 +7,23 @@ public class EnemyManager : MonoBehaviour
 [SerializeField] GameObject enemy;
 [SerializeField] Vector2 spawnArea;
 [SerializeField] float spawnTimer;
+[SerializeField]float waveTimer;
 [SerializeField] Transform player;
 float timer;
-
+float timerTwo;
 private void Update()
 {
     timer -= Time.deltaTime;
+    timerTwo -= Time.deltaTime;
     if (timer < 0f)
     {
         SpawnEnemy();
         timer = spawnTimer;
+    }
+    if (timerTwo < 0f)
+    {
+        InvokeRepeating("DebugMethod", 10f, 0.01f);
+        waveTimer = timerTwo;
     }
 }
 private void SpawnEnemy()
@@ -49,5 +56,13 @@ private void SpawnEnemy()
 
 
         return position;
+    }
+    private void TimerTwoReset()
+    {
+        timerTwo = waveTimer;
+    }
+    private void DebugMethod()
+    {
+        Debug.Log("Yarra yedi");
     }
 }
