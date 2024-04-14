@@ -15,9 +15,10 @@ public class PlayerController : MonoBehaviour
     public float playerCurrentHealth;
     public float playerMaxHealth;
     [SerializeField] private Slider healthSlider;
-    [SerializeField] int currentExperience;
-    [SerializeField] int maxExperience;
-    [SerializeField] int currentLevel;
+    [SerializeField] public float currentExperience;
+    //[SerializeField] public float maxExperience;
+    [SerializeField] public float currentLevel;
+    [SerializeField] private float neededExp;
     void Start()
     {
         healthSlider.maxValue = 100;
@@ -25,9 +26,12 @@ public class PlayerController : MonoBehaviour
         playerMaxHealth = 100f;
         playerCurrentHealth = playerMaxHealth;
         rb = GetComponent<Rigidbody2D>();
+        currentLevel = 1;
+        //maxExperience = neededExp;
     }
     void Update()
     {
+
         healthSlider.value = playerCurrentHealth;
         InputManagement();
 
@@ -35,8 +39,39 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if(currentExperience >= 10 && currentLevel == 0)
+        {
+            moveSpeed += 1f;
+            currentLevel++;
+        }
+        else if(currentExperience >= 20 && currentLevel == 1)
+        {
+            moveSpeed += 3f;
+            currentLevel++;
+        }
+        else if (currentExperience >= 30 && currentLevel == 2)
+        {
+            moveSpeed += 5;
+            currentLevel++;
+        }
+        else if(currentExperience >= 40 && currentLevel == 3)
+        {
+            moveSpeed += 10f;
+            currentLevel++;
+        }
+
+
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "ExpOrb")
+        {
+            Destroy(other.gameObject);
+            currentExperience += 1;
+        }
+    }
     void FixedUpdate()
     {
         Move();

@@ -334,7 +334,7 @@ public class SummonSystem : MonoBehaviour
 
     private void SetSpeedNormal()
     {
-        player.moveSpeed = 5f;
+        player.moveSpeed -= 5f;
     }
 
     private void AlRuneActivate()

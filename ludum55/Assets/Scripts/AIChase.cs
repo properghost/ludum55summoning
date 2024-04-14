@@ -19,6 +19,7 @@ public class AIChase : MonoBehaviour
     [SerializeField] private GameObject torchGoblin;
     public bool isGoblinAlive;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject expOrb;
     
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class AIChase : MonoBehaviour
 
         if(knightCurrentHealth <= 0f)
         {
+            Instantiate(expOrb, transform.position, transform.rotation);
             Destroy(gameObject, 0.01f);
         }
     }

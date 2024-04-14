@@ -419,6 +419,7 @@ MonoBehaviour:
   torchGoblin: {fileID: 509376218994446940, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
   isGoblinAlive: 0
   player: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+  expOrb: {fileID: 6024510054790565191, guid: 222bb5357f7d51043b17dd9eb555e36c, type: 3}
 --- !u!70 &2204131305405811641
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
