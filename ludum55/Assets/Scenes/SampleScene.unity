@@ -120913,6 +120913,10 @@ PrefabInstance:
       propertyPath: BarrelGoblinPNG
       value: 
       objectReference: {fileID: 1869296274}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: BarrelGoblinManaCost
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5223377650840911763, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: expSlider
       value: 

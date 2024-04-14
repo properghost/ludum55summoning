@@ -25,8 +25,6 @@ public class GoblinAI : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Knight").transform;
         player = GameObject.FindGameObjectWithTag("Knight");
-        enemySpeed = 4f;
-        distanceBetween = 1;
         goblinMaxHealth = 100f;
         goblinCurrentHealth = goblinMaxHealth;
         healthSlider.maxValue = 100;
@@ -66,7 +64,7 @@ public class GoblinAI : MonoBehaviour
         if (other.gameObject.tag == "Knight")
         {
             Debug.Log("knight touched by knight, should damage");
-            target.GetComponent<AIChase>().knightCurrentHealth -= 0.1f;
+            target.GetComponent<AIChase>().knightCurrentHealth -= 0.15f;
         }
         
     }
