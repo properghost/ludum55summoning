@@ -10,7 +10,6 @@ public class ProjectileTNT : MonoBehaviour
     void Start()
     {
         particleExplosion = GetComponent<ParticleSystem>();
-        particleExplosion.Play();
     }
 
     // Update is called once per frame
@@ -25,7 +24,7 @@ public class ProjectileTNT : MonoBehaviour
         {
             other.GetComponent<AIChase>().knightCurrentHealth = -0.1f;
             particleExplosion.Play();
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 0.1f);
         }
     }
 }

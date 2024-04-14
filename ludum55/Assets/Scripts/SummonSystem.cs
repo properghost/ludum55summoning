@@ -12,20 +12,20 @@ public class SummonSystem : MonoBehaviour
     private bool alRune;
     private float alRuneVal;
     private bool alRuneUsed;
-    [SerializeField] private float alRuneManaCost;
+
     //----------------------------------------
     //Rune Two
     private bool runeTwo;
     private bool gamRune;
     private float gamRuneVal;
     private bool gamRuneUsed;
-    [SerializeField] private float gamRuneManaCost;
+
     //----------------------------------------
     private bool runeThree;
     private bool bazRune;
     private float bazRuneVal;
     private bool bazRuneUsed;
-    [SerializeField] private float bazRuneManaCost;
+
     //----------------------------------------
     public float runeVal;
     public float maxMana;
@@ -33,6 +33,9 @@ public class SummonSystem : MonoBehaviour
     [SerializeField] private Slider manaSlider;
     //SummonPrefabs---------------------------
     [SerializeField] private GameObject torchGoblin;
+    [SerializeField] private float torchGoblinManaCost;
+    [SerializeField] private float TNTGoblinManaCost;
+    [SerializeField] private GameObject TNTGoblin;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +54,7 @@ public class SummonSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             manaSlider.value = currentMana;
-            currentMana -= alRuneManaCost;
+            //currentMana -= alRuneManaCost;
             runeOne = true;
             alRune = true;
             if (alRune && !alRuneUsed)
@@ -64,7 +67,7 @@ public class SummonSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             manaSlider.value = currentMana;
-            currentMana -= gamRuneManaCost;
+            //currentMana -= gamRuneManaCost;
             runeTwo = true;
             gamRune = true;
             if (gamRune && !gamRuneUsed)
@@ -78,7 +81,7 @@ public class SummonSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             manaSlider.value = currentMana;
-            currentMana -= bazRuneManaCost;
+            //currentMana -= bazRuneManaCost;
             runeThree = true;
             bazRune = true;
             if (bazRune && !bazRuneUsed)
@@ -144,6 +147,29 @@ public class SummonSystem : MonoBehaviour
                 bazRuneUsed = false;
 
                 runeVal = 1f;
+                currentMana -= torchGoblinManaCost;
+            }
+
+        }
+
+        if (runeOne && runeTwo && runeThree)
+        {
+            // SUMMON TNT GOBLIN / 1 + 3 + 2
+            if (runeVal == 37 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
+            {
+                Instantiate(TNTGoblin, transform.position, transform.rotation);
+                runeOne = false;
+                runeTwo = false;
+                runeThree = false;
+                alRune = false;
+                gamRune = false;
+                bazRune = false;
+                alRuneUsed = false;
+                gamRuneUsed = false;
+                bazRuneUsed = false;
+
+                runeVal = 1f;
+                currentMana -= TNTGoblinManaCost;
             }
 
         }
@@ -174,7 +200,7 @@ public class SummonSystem : MonoBehaviour
     // SUMMON VALUES ----------------------
     // 35 - SUMMON TORCH GOBLIN / 1 + 2 + 3
 
-    // 37 / 1 + 3 + 2
+    // 37 - SUMMON TNT GOBLIN / 1 + 3 + 2
 
     // 20 / 2 + 1 + 3
 
