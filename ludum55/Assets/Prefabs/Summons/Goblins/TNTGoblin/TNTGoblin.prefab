@@ -481,10 +481,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3357291970982632646}
-  - component: {fileID: 4046000329390222429}
+  - component: {fileID: 5026420310321071107}
   - component: {fileID: 9192677234627528421}
   - component: {fileID: 8852378705111872645}
   - component: {fileID: 3427235253479631668}
+  - component: {fileID: 7618591264487668230}
   m_Layer: 0
   m_Name: TNTGoblin
   m_TagString: Goblin
@@ -509,7 +510,7 @@ Transform:
   - {fileID: 7868124394427022050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4046000329390222429
+--- !u!114 &5026420310321071107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -518,18 +519,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7785498356705102519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f5f4abe35f9fa4eb3ed34b5b24c1fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 475abcf71edf7e54fa54b9310c423f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4278593441355326603, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
+  player: {fileID: 0}
   enemySpeed: 0
   distanceBetween: 0
-  target: {fileID: 4924192559168185394, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
-  goblinCurrentHealth: -20940
-  goblinMaxHealth: 0
-  healthDecayValue: 10
+  target: {fileID: 0}
+  goblinTNTCurrentHealth: 100
+  goblinMaxHealth: 100
+  healthDecayValue: 20
   healthSlider: {fileID: 7678408084882109197}
-  simpleKnight: {fileID: 4278593441355326603, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
+  simpleKnight: {fileID: 0}
 --- !u!50 &9192677234627528421
 Rigidbody2D:
   serializedVersion: 4
@@ -627,6 +628,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.96}
   m_Size: {x: 1.22, y: 1}
   m_Direction: 0
+--- !u!114 &7618591264487668230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785498356705102519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83e8f11d55df1e41948361ef54bac6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatToThrow: {fileID: 8370626408665239257, guid: fdc59d48e3b760644aac0ce98c746326, type: 3}
+  selfTransform: {fileID: 3357291970982632646}
+  cooldownTime: 0
 --- !u!1 &7976456426596203126
 GameObject:
   m_ObjectHideFlags: 0

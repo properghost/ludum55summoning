@@ -13,7 +13,7 @@ public class TNTGoblinAI : MonoBehaviour
     internal bool facingRight;
     internal float distance;
     internal float speed;
-    public float goblinCurrentHealth;
+    public float goblinTNTCurrentHealth;
     public float goblinMaxHealth;
     [SerializeField] private float healthDecayValue;
     [SerializeField] private Slider healthSlider;
@@ -28,13 +28,13 @@ public class TNTGoblinAI : MonoBehaviour
         enemySpeed = 4f;
         distanceBetween = 1;
         goblinMaxHealth = 100f;
-        goblinCurrentHealth = goblinMaxHealth;
+        goblinTNTCurrentHealth = goblinMaxHealth;
         healthSlider.maxValue = 100;
         healthSlider.value = goblinMaxHealth;
     }
     void Update()
     {
-        goblinCurrentHealth -= Time.deltaTime * healthDecayValue;
+        goblinTNTCurrentHealth -= Time.deltaTime * healthDecayValue;
         if(player == null)
         {
             player = GameObject.FindGameObjectWithTag("Knight");
@@ -44,7 +44,7 @@ public class TNTGoblinAI : MonoBehaviour
         {
             target = GameObject.FindGameObjectWithTag("Knight").transform;
         }
-        healthSlider.value = goblinCurrentHealth;
+        healthSlider.value = goblinTNTCurrentHealth;
         if (Vector3.Distance(target.position,transform.position)<20)
         {
             transform.position=Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -54,23 +54,15 @@ public class TNTGoblinAI : MonoBehaviour
             Flip();
         }
 
-        if(goblinCurrentHealth <= 0f)
+        if(goblinTNTCurrentHealth <= 0f)
         {
             Destroy(gameObject, 0.01f);
         }
 
     }
 
+
     
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Knight")
-        {
-            Debug.Log("knight touched by knight, should damage");
-            target.GetComponent<AIChase>().knightCurrentHealth -= 0.1f;
-        }
-        
-    }
    
     void FixedUpdate()
     {
