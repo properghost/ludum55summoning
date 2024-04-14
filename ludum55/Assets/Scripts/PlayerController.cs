@@ -53,30 +53,4 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
     }
-    private void OnEnable()
-    {
-        ExperienceManager.Instance.OnExperienceChange += HandleExperienceChange;
-    }
-    private void OnDisable()
-    {
-        ExperienceManager.Instance.OnExperienceChange -= HandleExperienceChange;
-    }
-    private void HandleExperienceChange(int newExperience)
-    {
-        currentExperience += newExperience;
-        if(currentExperience >= maxExperience)
-        {
-            LevelUp();
-        }
-    }
-    private void LevelUp()
-    {
-        playerMaxHealth += 10;
-        playerCurrentHealth = playerMaxHealth ;
-
-        currentLevel++;
-
-        currentExperience = 0;
-        maxExperience += 100;
-    }
 }
