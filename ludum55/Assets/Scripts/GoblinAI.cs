@@ -13,9 +13,10 @@ public class GoblinAI : MonoBehaviour
     internal bool facingRight;
     internal float distance;
     internal float speed;
-    [SerializeField] private float currentHealth;
-    [SerializeField] private float maxHealth;
+    public float goblinCurrentHealth;
+    public float goblinMaxHealth;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private GameObject simpleKnight;
     
     // Start is called before the first frame update
     void Start()
@@ -24,14 +25,23 @@ public class GoblinAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Knight");
         enemySpeed = 4f;
         distanceBetween = 1;
-        maxHealth = 100f;
-        currentHealth = maxHealth;
+        goblinMaxHealth = 100f;
+        goblinCurrentHealth = goblinMaxHealth;
         healthSlider.maxValue = 100;
-        healthSlider.value = maxHealth;
+        healthSlider.value = goblinMaxHealth;
     }
     void Update()
     {
-        healthSlider.value = maxHealth;
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Knight");
+        }
+
+        if(target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Knight").transform;
+        }
+        healthSlider.value = goblinCurrentHealth;
         if (Vector3.Distance(target.position,transform.position)<20)
         {
             transform.position=Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -41,19 +51,21 @@ public class GoblinAI : MonoBehaviour
             Flip();
         }
 
-        if(currentHealth <= 0f)
+        if(goblinCurrentHealth <= 0f)
         {
             Destroy(gameObject, 0.01f);
         }
 
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if(collision.gameObject.tag == "Knight")
+        if (other.gameObject.tag == "Knight")
         {
-            currentHealth -= 2 * Time.deltaTime;
+            Debug.Log("knight touched by knight, should damage");
+            target.GetComponent<AIChase>().knightCurrentHealth -= 0.1f;
         }
+        
     }
    
     void FixedUpdate()

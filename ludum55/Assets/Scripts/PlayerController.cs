@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,14 +11,27 @@ public class PlayerController : MonoBehaviour
     private float moveY;
     private Rigidbody2D rb;
     Vector2 moveDir;
+    public float playerCurrentHealth;
+    public float playerMaxHealth;
+    [SerializeField] private Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
+        healthSlider.maxValue = 100;
+        healthSlider.value = playerCurrentHealth;
+        playerMaxHealth = 100f;
+        playerCurrentHealth = playerMaxHealth;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
+        healthSlider.value = playerCurrentHealth;
         InputManagement();
+
+        if(playerCurrentHealth <= 0)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void FixedUpdate()
