@@ -36,8 +36,10 @@ public class SummonSystem : MonoBehaviour
     //SummonPrefabs---------------------------
     [SerializeField] private GameObject torchGoblin;
     [SerializeField] private float torchGoblinManaCost;
+    [SerializeField] private RawImage torchGoblinPNG;
     [SerializeField] private float TNTGoblinManaCost;
     [SerializeField] private GameObject TNTGoblin;
+    [SerializeField] private RawImage TNTGoblinPNG;
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +95,23 @@ public class SummonSystem : MonoBehaviour
             bazRuneImage.enabled = true;
         }
 
+        if(runeVal == 35)
+        {
+            torchGoblinPNG.enabled = true;
+        }
+        else if(runeVal != 35)
+        {
+            torchGoblinPNG.enabled = false;
+        }
 
+        if(runeVal == 37)
+        {
+            TNTGoblinPNG.enabled = true;
+        }
+        else if(runeVal != 37)
+        {
+            TNTGoblinPNG.enabled = false;
+        }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {

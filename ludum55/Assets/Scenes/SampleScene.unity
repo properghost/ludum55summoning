@@ -115341,7 +115341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5176471}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -115545,7 +115545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5176471}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -115617,7 +115617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5176471}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -117791,6 +117791,18 @@ PrefabInstance:
       propertyPath: TNTGoblin
       value: 
       objectReference: {fileID: 7785498356705102519, guid: a235c6f18dd928440995fd2c8f8f6668, type: 3}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: alRuneImage
+      value: 
+      objectReference: {fileID: 443534148}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: bazRuneImage
+      value: 
+      objectReference: {fileID: 691313677}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: gamRuneImage
+      value: 
+      objectReference: {fileID: 726115266}
     - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: TNTGoblinManaCost
       value: 30
