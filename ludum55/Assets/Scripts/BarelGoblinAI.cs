@@ -25,7 +25,6 @@ public class BarelGoblinAI : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Knight").transform;
         player = GameObject.FindGameObjectWithTag("Knight");
-        enemySpeed = 4f;
         distanceBetween = 1;
         goblinMaxHealth = 100f;
         goblinCurrentHealth = goblinMaxHealth;
@@ -36,6 +35,7 @@ public class BarelGoblinAI : MonoBehaviour
     }
     void Update()
     {
+        particleExplosion.Play();
         goblinCurrentHealth -= Time.deltaTime * healthDecayValue;
         if(player == null)
         {
@@ -69,8 +69,6 @@ public class BarelGoblinAI : MonoBehaviour
         {
             Debug.Log("knight touched by knight, should damage");
             target.GetComponent<AIChase>().knightCurrentHealth -= 20f;
-            particleExplosion.Play();
-            Destroy(gameObject, 1f);
         }
         
     }
