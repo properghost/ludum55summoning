@@ -409,14 +409,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fb2adf239be0b45b93ba76f7ad0689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goblinOrPlayer: {fileID: 0}
+  goblinOrPlayer: {fileID: 509376218994446940, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
   enemySpeed: 0
   distanceBetween: 0
-  target: {fileID: 0}
+  target: {fileID: 511923000228732587, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
   knightMaxHealth: 0
   knightCurrentHealth: 0
   healthSlider: {fileID: 4967322013111577006}
   torchGoblin: {fileID: 509376218994446940, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
+  isGoblinAlive: 0
+  player: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
 --- !u!70 &2204131305405811641
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

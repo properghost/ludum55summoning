@@ -15,8 +15,10 @@ public class GoblinAI : MonoBehaviour
     internal float speed;
     public float goblinCurrentHealth;
     public float goblinMaxHealth;
+    [SerializeField] private float healthDecayValue;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private GameObject simpleKnight;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class GoblinAI : MonoBehaviour
     }
     void Update()
     {
+        goblinCurrentHealth -= Time.deltaTime * healthDecayValue;
         if(player == null)
         {
             player = GameObject.FindGameObjectWithTag("Knight");

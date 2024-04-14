@@ -117378,6 +117378,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8930955963868463303, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0192791
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930955963868463303, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3380351
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930955963868463303, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9714648
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

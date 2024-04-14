@@ -9,22 +9,24 @@ public class AIChase : MonoBehaviour
     public GameObject goblinOrPlayer;
     public float enemySpeed;
     public float distanceBetween;
-    [SerializeField] internal Transform target;
+    [SerializeField] private Transform target;
     internal bool facingRight;
     internal float distance;
     internal float speed;
     public float knightMaxHealth;
     public float knightCurrentHealth;
     [SerializeField] private Slider healthSlider;
-    [SerializeField] GameObject torchGoblin;
+    [SerializeField] private GameObject torchGoblin;
+    public bool isGoblinAlive;
+    [SerializeField] private GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Goblin").transform;
-        goblinOrPlayer = GameObject.FindGameObjectWithTag("Goblin");
-        enemySpeed = 4f;
-        distanceBetween = 1;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        goblinOrPlayer = GameObject.FindGameObjectWithTag("Player");
+        enemySpeed = 2f;
+        distanceBetween = 0.5f;
         knightMaxHealth = 100f;
         healthSlider.maxValue = knightMaxHealth;
         healthSlider.value = knightCurrentHealth;
@@ -32,19 +34,10 @@ public class AIChase : MonoBehaviour
     }
     void Update()
     {
-        if(target == null)
-        {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            goblinOrPlayer = GameObject.FindGameObjectWithTag("Player");
-            
-        }
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        goblinOrPlayer = GameObject.FindGameObjectWithTag("Player");
+        isGoblinAlive = false;
 
-        while(target == GameObject.FindGameObjectWithTag("Player").transform)
-        {
-            target = GameObject.FindGameObjectWithTag("Goblin").transform;
-            goblinOrPlayer = GameObject.FindGameObjectWithTag("Goblin");
-        }
-        
         
 
 
@@ -66,14 +59,9 @@ public class AIChase : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D obj)
     {
-        if (obj.gameObject.tag == "Goblin")
+        if (obj.gameObject.tag == "Player")
         {
             Debug.Log("goblin touched by knight, should damage");
-            target.GetComponent<GoblinAI>().goblinCurrentHealth -= 0.1f;
-        }
-
-        if(obj.gameObject.tag == "Player")
-        {
             target.GetComponent<PlayerController>().playerCurrentHealth -= 0.1f;
         }
     }
