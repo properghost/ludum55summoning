@@ -18,7 +18,6 @@ public class GoblinAI : MonoBehaviour
     [SerializeField] private float healthDecayValue;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private GameObject simpleKnight;
-    int expAmount = 100;
     
     
     // Start is called before the first frame update
@@ -57,8 +56,6 @@ public class GoblinAI : MonoBehaviour
 
         if(goblinCurrentHealth <= 0f)
         {
-            GetComponent<LootBag>().InstantiateLoot(transform.position);
-            ExperienceManager.Instance.AddExperience(expAmount);
             Destroy(gameObject, 0.01f);
         }
 

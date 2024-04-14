@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
     public float moveSpeed;
     private float moveX;
     private float moveY;
