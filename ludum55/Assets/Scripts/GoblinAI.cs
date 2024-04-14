@@ -48,11 +48,11 @@ public class GoblinAI : MonoBehaviour
 
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Knight")
         {
-            currentHealth = currentHealth - 2f * Time.deltaTime;
+            currentHealth -= 2 * Time.deltaTime;
         }
     }
    

@@ -117227,6 +117227,7 @@ MonoBehaviour:
   enemy: {fileID: 2021141721}
   spawnArea: {x: 30, y: 30}
   spawnTimer: 3
+  player: {fileID: 522515701}
 --- !u!1 &1802560198
 GameObject:
   m_ObjectHideFlags: 0
