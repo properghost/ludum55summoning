@@ -25,11 +25,8 @@ public class TNTGoblinAI : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Knight").transform;
         player = GameObject.FindGameObjectWithTag("Knight");
-        enemySpeed = 4f;
-        distanceBetween = 1;
-        goblinMaxHealth = 100f;
         goblinTNTCurrentHealth = goblinMaxHealth;
-        healthSlider.maxValue = 100;
+        healthSlider.maxValue = goblinMaxHealth;
         healthSlider.value = goblinMaxHealth;
     }
     void Update()

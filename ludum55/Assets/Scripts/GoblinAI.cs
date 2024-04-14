@@ -18,7 +18,7 @@ public class GoblinAI : MonoBehaviour
     [SerializeField] private float healthDecayValue;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private GameObject simpleKnight;
-    
+    [SerializeField] private float goblinDamager;
     
     // Start is called before the first frame update
     void Start()
@@ -64,7 +64,7 @@ public class GoblinAI : MonoBehaviour
         if (other.gameObject.tag == "Knight")
         {
             Debug.Log("knight touched by knight, should damage");
-            target.GetComponent<AIChase>().knightCurrentHealth -= 0.15f;
+            target.GetComponent<AIChase>().knightCurrentHealth -= goblinDamager;
         }
         
     }

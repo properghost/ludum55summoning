@@ -34,10 +34,16 @@ public class SummonSystem : MonoBehaviour
     [SerializeField] private Slider manaSlider;
     //SummonPrefabs---------------------------
     [SerializeField] private GameObject torchGoblin;
+    [SerializeField] private GameObject torchGoblinLvlTwo;
+    [SerializeField] private GameObject torchGoblinLvlThree;
+    [SerializeField] private GameObject torchGoblinLvlFour;
     [SerializeField] private float torchGoblinManaCost;
     [SerializeField] private RawImage torchGoblinPNG;
     [SerializeField] private float TNTGoblinManaCost;
     [SerializeField] private GameObject TNTGoblin;
+    [SerializeField] private GameObject TNTGoblinLvlTwo;
+    [SerializeField] private GameObject TNTGoblinLvlThree;
+    [SerializeField] private GameObject TNTGoblinLvlFour;
     [SerializeField] private RawImage TNTGoblinPNG;
     [SerializeField] private float BarrelGoblinManaCost;
     [SerializeField] private GameObject BarrelGoblin;
@@ -226,7 +232,22 @@ public class SummonSystem : MonoBehaviour
             // SUMMON TORCH GOBLIN / 1 + 2 + 3
             if (runeVal == 35 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
             {
+                if(player.currentLevel < 2)
+                {
                 Instantiate(torchGoblin, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel >= 2)
+                {
+                Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel >= 4)
+                {
+                    Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel >= 6)
+                {
+                    Instantiate(torchGoblinLvlFour, transform.position, transform.rotation);
+                }
                 runeOne = false;
                 runeTwo = false;
                 runeThree = false;
@@ -248,7 +269,22 @@ public class SummonSystem : MonoBehaviour
             // SUMMON TNT GOBLIN / 1 + 3 + 2
             if (runeVal == 37 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
             {
+                if(player.currentLevel < 1)
+                {
                 Instantiate(TNTGoblin, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel >= 1)
+                {
+                Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel >= 3)
+                {
+                    Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel >= 5)
+                {
+                    Instantiate(TNTGoblinLvlFour, transform.position, transform.rotation);
+                }
                 runeOne = false;
                 runeTwo = false;
                 runeThree = false;

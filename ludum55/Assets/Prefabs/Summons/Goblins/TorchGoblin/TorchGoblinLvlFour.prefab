@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5242901653483790073}
   - component: {fileID: 3586578458009930925}
   m_Layer: 0
-  m_Name: TorchGoblin
+  m_Name: TorchGoblinLvlFour
   m_TagString: Goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,15 +50,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4278593441355326603, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
-  enemySpeed: 6
+  enemySpeed: 12
   distanceBetween: 0.5
   target: {fileID: 4924192559168185394, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
-  goblinCurrentHealth: -14293
-  goblinMaxHealth: 100
+  goblinCurrentHealth: 150
+  goblinMaxHealth: 150
   healthDecayValue: 15
   healthSlider: {fileID: 6256362745222123110}
   simpleKnight: {fileID: 4278593441355326603, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
-  goblinDamager: 0.11
+  goblinDamager: 0.33
 --- !u!50 &5151608141613964810
 Rigidbody2D:
   serializedVersion: 4
@@ -526,7 +526,7 @@ SpriteRenderer:
   m_SortingLayerID: 313663759
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -5244524850698572141, guid: 3fca9e3e7ca44454ea9bc2d42ee7c430, type: 3}
+  m_Sprite: {fileID: 8221166002960257366, guid: 80d868f7c869e4b4487744e3c362b46b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

@@ -427,7 +427,7 @@ SpriteRenderer:
   m_SortingOrder: -1
   m_Sprite: {fileID: 472740942802897983, guid: fcbcd479cc683c34fa33df3a914a5164, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.85, y: 0.69}
@@ -523,8 +523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemySpeed: 0
-  distanceBetween: 0
+  enemySpeed: 3
+  distanceBetween: 2
   target: {fileID: 0}
   goblinTNTCurrentHealth: 100
   goblinMaxHealth: 100
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatToThrow: {fileID: 8370626408665239257, guid: fdc59d48e3b760644aac0ce98c746326, type: 3}
   selfTransform: {fileID: 3357291970982632646}
-  cooldownTime: 0
+  cooldownTime: -5
 --- !u!1 &7976456426596203126
 GameObject:
   m_ObjectHideFlags: 0

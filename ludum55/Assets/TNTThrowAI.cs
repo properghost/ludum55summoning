@@ -17,7 +17,6 @@ public class TNTThrowAI : MonoBehaviour
 
 
         cooldownTimer -= Time.deltaTime;
-        cooldownTime = -5f;
         
         if(cooldownTimer <= cooldownTime)
         {

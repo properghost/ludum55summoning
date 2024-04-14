@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 5213652704483032093}
   - component: {fileID: 3511548118309792465}
   - component: {fileID: 7074256395705223916}
+  - component: {fileID: 2850746144326389847}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -378,10 +379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2ef5ffea377fb4a87532f405b4b289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  summonSystem: {fileID: 0}
   moveSpeed: 5
   playerCurrentHealth: 100
   playerMaxHealth: 100
   healthSlider: {fileID: 874393948299937827}
+  expSlider: {fileID: 0}
   currentExperience: 0
   currentLevel: 1
   neededExp: 2
@@ -433,12 +436,13 @@ MonoBehaviour:
   currentMana: 0
   manaSlider: {fileID: 4841279804206919508}
   torchGoblin: {fileID: 509376218994446940, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
+  torchGoblinLvlTwo: {fileID: 509376218994446940, guid: bde66441242de2f419b4642f929f5a8b, type: 3}
   torchGoblinManaCost: 20
   torchGoblinPNG: {fileID: 0}
   TNTGoblinManaCost: 30
   TNTGoblin: {fileID: 7785498356705102519, guid: a235c6f18dd928440995fd2c8f8f6668, type: 3}
   TNTGoblinPNG: {fileID: 0}
-  BarrelGoblinManaCost: 50
+  BarrelGoblinManaCost: 100
   BarrelGoblin: {fileID: 6130256489015036081, guid: aeddb9abd86a0b54994bd3be445a7ff6, type: 3}
   BarrelGoblinPNG: {fileID: 0}
   manaPNG: {fileID: 0}
@@ -495,6 +499,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.03, y: -0.3}
   m_Size: {x: 0.5, y: 1.83}
   m_Direction: 0
+--- !u!114 &2850746144326389847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5496722659159951761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5bb1746fcf95542b47bc9a5da335ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4278593441355326603, guid: 220877bff83a4124391b8b838a4048fa, type: 3}
+  spawnArea: {x: 30, y: 30}
+  spawnTimer: 1
+  player: {fileID: 8458677345345758185}
 --- !u!1 &6843086947244911649
 GameObject:
   m_ObjectHideFlags: 0
