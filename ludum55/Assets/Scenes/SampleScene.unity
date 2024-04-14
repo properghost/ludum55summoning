@@ -116221,6 +116221,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443534146}
   m_CullTransparentMesh: 1
+--- !u!1 &451346166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+  m_PrefabInstance: {fileID: 6206931751168759162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &474616004
 GameObject:
   m_ObjectHideFlags: 0
@@ -116487,6 +116492,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8458677345345758185, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
   m_PrefabInstance: {fileID: 6206931751168759162}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &522515702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451346166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5bb1746fcf95542b47bc9a5da335ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4278593441355326603, guid: 220877bff83a4124391b8b838a4048fa, type: 3}
+  spawnArea: {x: 30, y: 30}
+  spawnTimer: 10
+  player: {fileID: 8458677345345758185, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
 --- !u!1 &589264548
 GameObject:
   m_ObjectHideFlags: 0
@@ -120977,7 +120998,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 522515702}
   m_SourcePrefab: {fileID: 100100000, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
