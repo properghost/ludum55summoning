@@ -239,6 +239,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &164258896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 164258897}
+  - component: {fileID: 164258899}
+  - component: {fileID: 164258898}
+  m_Layer: 5
+  m_Name: TorchGoblin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &164258897
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164258896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7513, y: 1.7513, z: 1.7513}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1564312738}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.46762496, y: 0.009259259}
+  m_AnchorMax: {x: 0.55700004, y: 0.16462965}
+  m_AnchoredPosition: {x: 346, y: 46}
+  m_SizeDelta: {x: -71, y: -68}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &164258898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164258896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: f2219b4a92fea4549b55cd9b833b6c06, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &164258899
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164258896}
+  m_CullTransparentMesh: 1
 --- !u!1 &226540723
 GameObject:
   m_ObjectHideFlags: 0
@@ -117566,6 +117638,8 @@ RectTransform:
   - {fileID: 726115265}
   - {fileID: 691313676}
   - {fileID: 2115162022}
+  - {fileID: 164258897}
+  - {fileID: 1755645553}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -117573,6 +117647,78 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1755645552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755645553}
+  - component: {fileID: 1755645555}
+  - component: {fileID: 1755645554}
+  m_Layer: 5
+  m_Name: TNTGoblin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1755645553
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755645552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7513, y: 1.7513, z: 1.7513}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1564312738}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.46762496, y: 0.009259259}
+  m_AnchorMax: {x: 0.55700004, y: 0.16462965}
+  m_AnchoredPosition: {x: 346, y: 36}
+  m_SizeDelta: {x: -71, y: -68}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1755645554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755645552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: b799f1c2b7e676941af94bbc4663e439, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1755645555
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755645552}
+  m_CullTransparentMesh: 1
 --- !u!1 &1802560198
 GameObject:
   m_ObjectHideFlags: 0
@@ -117796,6 +117942,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 443534148}
     - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: TNTGoblinPNG
+      value: 
+      objectReference: {fileID: 1755645554}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: bazRuneImage
       value: 
       objectReference: {fileID: 691313677}
@@ -117803,6 +117953,10 @@ PrefabInstance:
       propertyPath: gamRuneImage
       value: 
       objectReference: {fileID: 726115266}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: torchGoblinPNG
+      value: 
+      objectReference: {fileID: 164258898}
     - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: TNTGoblinManaCost
       value: 30
