@@ -17,7 +17,6 @@ public class Level : MonoBehaviour
     {
         experience += amount;
     }
-
     public void CheckLevelUp()
     {
         if (experience >= TO_LEVEL_UP)
@@ -25,6 +24,5 @@ public class Level : MonoBehaviour
             experience -= TO_LEVEL_UP;
             level += 1;
         }
-
     }
 }
