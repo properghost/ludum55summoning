@@ -70,7 +70,7 @@ public class BarelGoblinAI : MonoBehaviour
             Debug.Log("knight touched by knight, should damage");
             target.GetComponent<AIChase>().knightCurrentHealth -= 20f;
             particleExplosion.Play();
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject, 1f);
         }
         
     }

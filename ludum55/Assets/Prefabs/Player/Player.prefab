@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 7074256395705223916}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,6 +382,9 @@ MonoBehaviour:
   playerCurrentHealth: 100
   playerMaxHealth: 100
   healthSlider: {fileID: 874393948299937827}
+  currentExperience: 0
+  maxExperience: 0
+  currentLevel: 0
 --- !u!50 &1228305091337591834
 Rigidbody2D:
   serializedVersion: 4
@@ -421,14 +424,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43af62487de85b54f8491700b73f3498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alRuneManaCost: 20
-  gamRuneManaCost: 20
-  bazRuneManaCost: 20
+  player: {fileID: 5223377650840911763}
+  alRuneImage: {fileID: 0}
+  gamRuneImage: {fileID: 0}
+  bazRuneImage: {fileID: 0}
   runeVal: 0
   maxMana: 100
   currentMana: 0
   manaSlider: {fileID: 4841279804206919508}
   torchGoblin: {fileID: 509376218994446940, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
+  torchGoblinManaCost: 20
+  torchGoblinPNG: {fileID: 0}
+  TNTGoblinManaCost: 30
+  TNTGoblin: {fileID: 7785498356705102519, guid: a235c6f18dd928440995fd2c8f8f6668, type: 3}
+  TNTGoblinPNG: {fileID: 0}
+  BarrelGoblinManaCost: 50
+  BarrelGoblin: {fileID: 6130256489015036081, guid: aeddb9abd86a0b54994bd3be445a7ff6, type: 3}
+  BarrelGoblinPNG: {fileID: 0}
 --- !u!114 &3511548118309792465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,9 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515ab872cc899ba42a2ef208d13197f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 4278593441355326603, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
   spawnArea: {x: 30, y: 30}
-  spawnTimer: 3
+  spawnTimer: 1
   player: {fileID: 8458677345345758185}
 --- !u!70 &7074256395705223916
 CapsuleCollider2D:

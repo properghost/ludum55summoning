@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class SummonSystem : MonoBehaviour
 {
+    [SerializeField] private PlayerController player;
     //Rune One
     private bool runeOne;
     private bool alRune;
@@ -43,6 +44,9 @@ public class SummonSystem : MonoBehaviour
     [SerializeField] private float BarrelGoblinManaCost;
     [SerializeField] private GameObject BarrelGoblin;
     [SerializeField] private RawImage BarrelGoblinPNG;
+    [SerializeField] private RawImage manaPNG;
+    [SerializeField] private RawImage healthPNG;
+    [SerializeField] private RawImage boostSpeedPNG;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +61,7 @@ public class SummonSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GetComponent<PlayerController>();
         manaSlider.value = currentMana;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -123,6 +128,33 @@ public class SummonSystem : MonoBehaviour
         else if(runeVal != 20)
         {
             BarrelGoblinPNG.enabled = false;
+        }
+
+        if(runeVal == 17)
+        {
+            healthPNG.enabled = true;
+        }
+        else if(runeVal != 17)
+        {
+            healthPNG.enabled = false;
+        }
+
+        if(runeVal == 11)
+        {
+            manaPNG.enabled = true;
+        }
+        else if(runeVal != 11)
+        {
+            manaPNG.enabled= false;
+        }
+
+        if(runeVal == 10)
+        {
+            boostSpeedPNG.enabled = true;
+        }
+        else if(runeVal != 10)
+        {
+            boostSpeedPNG.enabled= false;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -255,8 +287,56 @@ public class SummonSystem : MonoBehaviour
                 currentMana -= BarrelGoblinManaCost;
             }
         }
+
+        if (runeOne && runeTwo && runeThree)
+        {
+            // REPLENISH HEALTH / 3 + 1 + 2
+            if (runeVal == 17 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
+            {
+                player.playerCurrentHealth += 20f;
+                runeOne = false;
+                runeTwo = false;
+                runeThree = false;
+                alRune = false;
+                gamRune = false;
+                bazRune = false;
+                alRuneUsed = false;
+                gamRuneUsed = false;
+                bazRuneUsed = false;
+
+                runeVal = 1f;
+                currentMana -= BarrelGoblinManaCost;
+            }
+        }
+
+        if (runeOne && runeTwo && runeThree)
+        {
+            // SPEED BOOST / 2 + 3 + 1
+            if (runeVal == 10 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
+            {
+                player.moveSpeed += 5f;
+                runeOne = false;
+                runeTwo = false;
+                runeThree = false;
+                alRune = false;
+                gamRune = false;
+                bazRune = false;
+                alRuneUsed = false;
+                gamRuneUsed = false;
+                bazRuneUsed = false;
+
+                runeVal = 1f;
+                currentMana -= BarrelGoblinManaCost;
+                Invoke("SetSpeedNormal", 1.5f);
+            }
+        }
         
         
+    }
+
+    private void SetSpeedNormal()
+    {
+        player.moveSpeed = 5f;
     }
 
     private void AlRuneActivate()
@@ -286,9 +366,9 @@ public class SummonSystem : MonoBehaviour
 
     // 20  - SUMMON BARREL GOBLIN / 2 + 1 + 3
 
-    // 10 / 2 + 3 + 1 
+    // 10 - SPEED BOOST / 2 + 3 + 1 
 
-    // 17 / 3 + 1 + 2
+    // 17 - REPLENISH HEALTH / 3 + 1 + 2
 
     // 11 - REPLENISH MANA / 3 + 2 + 1
     // SUMMON VALUES ----------------------
