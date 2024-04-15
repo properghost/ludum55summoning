@@ -18,11 +18,11 @@ public class ProjectileTNT : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Knight")
         {
-            other.GetComponent<AIChase>().knightCurrentHealth = -0.1f;
+            other.GetComponent<AIChase>().knightCurrentHealth = -0.01f;
             particleExplosion.Play();
             Destroy(gameObject, 0.1f);
         }
