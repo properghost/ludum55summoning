@@ -70,6 +70,7 @@ public class SummonSystem : MonoBehaviour
     void Update()
     {
         player = GetComponent<PlayerController>();
+        manaSlider.maxValue = maxMana;
         manaSlider.value = currentMana;
         if(!runeOne)
         {

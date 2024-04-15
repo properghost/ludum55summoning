@@ -494,11 +494,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goblinOrPlayer: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
-  enemySpeed: 1.5
+  enemySpeed: 1.9
   distanceBetween: 0.1
   target: {fileID: 8458677345345758185, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
-  knightMaxHealth: 200
-  knightCurrentHealth: 200
+  knightMaxHealth: 350
+  knightCurrentHealth: 350
   healthSlider: {fileID: 4967322013111577006}
   torchGoblin: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
   isGoblinAlive: 0
@@ -551,7 +551,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

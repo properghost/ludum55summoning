@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float neededExp;
     [SerializeField] private Animator animator;
     private bool isRunning;
+    
     void Start()
     {
         summonSystem = GetComponent<SummonSystem>();
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        healthSlider.maxValue = playerMaxHealth;
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             GetComponentInChildren<SpriteRenderer>().flipX = true;
@@ -74,7 +77,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 100 && currentLevel == 1)
+        else if(currentExperience >= 150 && currentLevel == 1)
         {
             moveSpeed += 1f;
             currentLevel++;
@@ -83,7 +86,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if (currentExperience >= 200 && currentLevel == 2)
+        else if (currentExperience >= 300 && currentLevel == 2)
         {
             moveSpeed += 1;
             currentLevel++;
@@ -92,7 +95,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 300 && currentLevel == 3)
+        else if(currentExperience >= 450 && currentLevel == 3)
         {
             currentLevel++;
             expSlider.value = currentLevel;
@@ -100,7 +103,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 400 && currentLevel == 4)
+        else if(currentExperience >= 600 && currentLevel == 4)
         {
             currentLevel++;
             expSlider.value = currentLevel;
@@ -108,7 +111,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 500 && currentLevel == 5)
+        else if(currentExperience >= 750 && currentLevel == 5)
         {
             moveSpeed += 1f;
             currentLevel++;
@@ -117,7 +120,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 600 && currentLevel == 6)
+        else if(currentExperience >= 850 && currentLevel == 6)
         {
             currentLevel++;
             expSlider.value = currentLevel;
@@ -125,7 +128,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 700 && currentLevel == 7)
+        else if(currentExperience >= 950 && currentLevel == 7)
         {
             currentLevel++;
             expSlider.value = currentLevel;
@@ -133,7 +136,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 800 && currentLevel == 8)
+        else if(currentExperience >= 1050 && currentLevel == 8)
         {
             moveSpeed += 0.5f;
             currentLevel++;
@@ -142,7 +145,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 900 && currentLevel == 9)
+        else if(currentExperience >= 1250 && currentLevel == 9)
         {
             moveSpeed += 0.5f;
             currentLevel++;

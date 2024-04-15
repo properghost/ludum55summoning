@@ -13,37 +13,55 @@ public class EnemyManager : MonoBehaviour
 float timer;
 float timerTwo;
 float gameTime;
+private bool lvlOne;
+private bool lvlTwo;
+private bool lvlThree;
+private bool lvlFour;
+private bool lvlFive;
+
 
 private void Start()
 {
     timerTwo = waveTimer;
+    lvlOne = false;
+    lvlTwo = false;
+    lvlThree = false;
+    lvlFour = false;
+    lvlFive = false;
 }
 private void Update()
 {
     gameTime += Time.deltaTime;
 
-    if (gameTime >= 600)
+    if (gameTime >= 600 && !lvlFive)
     {
         SpawnBoss();
         spawnTimer = 5f;
+        lvlFive = true;
         
     }
-    else if (gameTime >= 540)
+    else if (gameTime >= 540 && !lvlFour)
     {
         spawnTimer -= 1f;
+        lvlFour = true;
     }
-    else if (gameTime >= 360)
+    else if (gameTime >= 360 && !lvlThree)
     {
         spawnTimer -= .5f;
+        lvlThree = true;
     }
-    else if(gameTime >= 180)
+    else if(gameTime >= 180 && !lvlTwo)
     {
         spawnTimer -= 0.4f;
+        lvlTwo = true;
     }
-    else if(gameTime >= 60)
+    else if(gameTime >= 60 && !lvlOne)
     {
         spawnTimer -= 0.1f;
+        lvlOne = true;
     }
+
+
     timer -= Time.deltaTime;
     timerTwo -= Time.deltaTime;
     if (timer < 0f)
@@ -52,20 +70,25 @@ private void Update()
         timer = spawnTimer;
     }
 
-    // if (timerTwo < 0f)
-    // {
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     SpawnEnemy();
-    //     timerTwo = waveTimer;
-    // }
+    if (timerTwo < 0f)
+    {
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        timerTwo = waveTimer;
+    }
 }
 private void SpawnEnemy()
     {

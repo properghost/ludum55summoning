@@ -26,9 +26,6 @@ public class AIChase : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         goblinOrPlayer = GameObject.FindGameObjectWithTag("Player");
-        enemySpeed = 2f;
-        distanceBetween = 0.5f;
-        knightMaxHealth = 100f;
         healthSlider.maxValue = knightMaxHealth;
         healthSlider.value = knightCurrentHealth;
         knightCurrentHealth = knightMaxHealth;

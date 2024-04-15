@@ -53,12 +53,12 @@ MonoBehaviour:
   enemySpeed: 10
   distanceBetween: 0.5
   target: {fileID: 4924192559168185394, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
-  goblinCurrentHealth: 175
-  goblinMaxHealth: 175
+  goblinCurrentHealth: 100
+  goblinMaxHealth: 100
   healthDecayValue: 10
   healthSlider: {fileID: 6256362745222123110}
   simpleKnight: {fileID: 4278593441355326603, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
-  goblinDamager: 0.25
+  goblinDamager: 0.35
 --- !u!50 &5151608141613964810
 Rigidbody2D:
   serializedVersion: 4
