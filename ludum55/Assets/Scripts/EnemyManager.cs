@@ -19,6 +19,9 @@ private bool lvlTwo;
 private bool lvlThree;
 private bool lvlFour;
 private bool lvlFive;
+private bool lvlSix;
+private bool lvlSeven;
+private bool lvlEight;
 
 
 private void Start()
@@ -29,16 +32,42 @@ private void Start()
     lvlThree = false;
     lvlFour = false;
     lvlFive = false;
+    lvlFive = false;
+    lvlSix = false;
+    lvlSeven = false;
+    lvlEight = false;
 }
 private void Update()
 {
-    if(gameTime >= 600)
-    {
-        SceneManager.LoadScene("0");
-    }
     gameTime += Time.deltaTime;
 
-    if (gameTime >= 480 && !lvlFive)
+    if (gameTime >= 860 && !lvlEight)
+    {
+        SpawnBoss();
+        SpawnBoss();
+        SpawnBoss();
+        spawnTimer -= 0.2f;
+        lvlEight = true;
+    }
+    else if(gameTime >= 720 && !lvlSeven)
+    {
+        SpawnBoss();
+        SpawnBoss();
+        spawnTimer -= 0.1f;
+        lvlSeven = true;
+    }
+    else if(gameTime >= 600 && !lvlSix)
+    {
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        lvlSix = true;
+    }
+    else if (gameTime >= 480 && !lvlFive)
     {
         SpawnEnemy();
         SpawnEnemy();
@@ -49,8 +78,6 @@ private void Update()
         SpawnEnemy();
         SpawnEnemy();
         SpawnBoss();
-        spawnTimer = 20f;
-        waveTimer = 60f;
         lvlFive = true;
         
     }
