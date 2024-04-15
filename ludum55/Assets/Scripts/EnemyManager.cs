@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class EnemyManager : MonoBehaviour
 [SerializeField] Transform player;
 float timer;
 float timerTwo;
-float gameTime;
+[SerializeField] public float gameTime;
 private bool lvlOne;
 private bool lvlTwo;
 private bool lvlThree;
@@ -31,9 +32,13 @@ private void Start()
 }
 private void Update()
 {
+    if(gameTime >= 600)
+    {
+        SceneManager.LoadScene("0");
+    }
     gameTime += Time.deltaTime;
 
-    if (gameTime >= 600 && !lvlFive)
+    if (gameTime >= 480 && !lvlFive)
     {
         SpawnEnemy();
         SpawnEnemy();
@@ -49,7 +54,7 @@ private void Update()
         lvlFive = true;
         
     }
-    else if (gameTime >= 540 && !lvlFour)
+    else if (gameTime >= 420 && !lvlFour)
     {
         spawnTimer -= 1f;
         lvlFour = true;

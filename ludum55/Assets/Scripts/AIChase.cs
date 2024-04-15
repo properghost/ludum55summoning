@@ -19,7 +19,6 @@ public class AIChase : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private GameObject torchGoblin;
     public bool isGoblinAlive;
-    public bool isLastBoss;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject expOrb;
     
@@ -53,15 +52,8 @@ public class AIChase : MonoBehaviour
 
         if(knightCurrentHealth <= 0f)
         {
-            if(isLastBoss)
-            {
-                SceneManager.LoadScene("3");
-            }
-            else
-            {
             Instantiate(expOrb, transform.position, transform.rotation);
             Destroy(gameObject, 0.01f);
-            }
         }
     }
 
