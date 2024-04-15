@@ -23,14 +23,14 @@ public class Timer : MonoBehaviour
         {
             if (timeRemaining >= 0)
             {
-                timeRemaining -= Time.deltaTime;
+                timeRemaining += Time.deltaTime;
                 DisplayTime(timeRemaining);
             }
         }
     }
     void DisplayTime(float timeToDisplay)
     {
-        timeToDisplay -=Time.deltaTime;
+        timeToDisplay +=Time.deltaTime;
         float minutes = Mathf.FloorToInt (timeToDisplay / 60);
         float seconds = Mathf.FloorToInt (timeToDisplay % 60);
         timeText.text = string.Format ("{0:00}:{1:00}", minutes, seconds);
