@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] public float maxExperience;
     [SerializeField] public float currentLevel;
     [SerializeField] private float neededExp;
+    [SerializeField] private Animator animator;
+    private bool isRunning;
     void Start()
     {
         summonSystem = GetComponent<SummonSystem>();
@@ -34,8 +36,27 @@ public class PlayerController : MonoBehaviour
         currentLevel = 0;
         //maxExperience = neededExp;
     }
+
+    
     void Update()
     {
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
+        }
+        else if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
+
+        if(rb.velocity.magnitude >= 3)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
         healthSlider.value = playerCurrentHealth;
         InputManagement();
 

@@ -5,14 +5,45 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
 [SerializeField] GameObject enemy;
+[SerializeField] GameObject endBoss;
 [SerializeField] Vector2 spawnArea;
 [SerializeField] float spawnTimer;
 [SerializeField]float waveTimer;
 [SerializeField] Transform player;
 float timer;
 float timerTwo;
+float gameTime;
+
+private void Start()
+{
+    timerTwo = waveTimer;
+}
 private void Update()
 {
+    gameTime += Time.deltaTime;
+
+    if (gameTime >= 600)
+    {
+        SpawnBoss();
+        spawnTimer = 5f;
+        
+    }
+    else if (gameTime >= 540)
+    {
+        spawnTimer -= 1f;
+    }
+    else if (gameTime >= 360)
+    {
+        spawnTimer -= .5f;
+    }
+    else if(gameTime >= 180)
+    {
+        spawnTimer -= 0.4f;
+    }
+    else if(gameTime >= 60)
+    {
+        spawnTimer -= 0.1f;
+    }
     timer -= Time.deltaTime;
     timerTwo -= Time.deltaTime;
     if (timer < 0f)
@@ -20,11 +51,30 @@ private void Update()
         SpawnEnemy();
         timer = spawnTimer;
     }
-    // if (timerTwo < 0f)
-    // {
-    //     Invoke("DebugMethod", 10f);
-    //     waveTimer = timerTwo;
-    // }
+    if (timerTwo < 0f)
+    {
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        timerTwo = waveTimer;
+    }
 }
 private void SpawnEnemy()
     {
@@ -34,6 +84,16 @@ private void SpawnEnemy()
 
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
+    }
+
+    private void SpawnBoss()
+    {
+        Vector3 position = GenerateRandomPosition();
+
+        position += player.transform.position;
+
+        GameObject newBoss = Instantiate(endBoss);
+        newBoss.transform.position = position;
     }
 
     private Vector3 GenerateRandomPosition()

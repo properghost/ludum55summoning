@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class SummonSystem : MonoBehaviour
 {
+    [SerializeField] private AudioSource spaceSound;
+    [SerializeField] private AudioSource keyOneSound;
+    [SerializeField] private AudioSource keyTwoSound;
+    [SerializeField] private AudioSource keyThreeSound;
     [SerializeField] private PlayerController player;
     //Rune One
     private bool runeOne;
@@ -67,19 +71,6 @@ public class SummonSystem : MonoBehaviour
     {
         player = GetComponent<PlayerController>();
         manaSlider.value = currentMana;
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            manaSlider.value = currentMana;
-            //currentMana -= alRuneManaCost;
-            runeOne = true;
-            alRune = true;
-            if (alRune && !alRuneUsed)
-            {
-                Invoke("AlRuneActivate", 0);
-                alRuneUsed = true;
-            }
-        }
-
         if(!runeOne)
         {
             alRuneImage.enabled = false;
@@ -160,9 +151,24 @@ public class SummonSystem : MonoBehaviour
         {
             boostSpeedPNG.enabled= false;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            keyOneSound.Play();
+            manaSlider.value = currentMana;
+            //currentMana -= alRuneManaCost;
+            runeOne = true;
+            alRune = true;
+            if (alRune && !alRuneUsed)
+            {
+                Invoke("AlRuneActivate", 0);
+                alRuneUsed = true;
+            }
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            keyTwoSound.Play();
             manaSlider.value = currentMana;
             //currentMana -= gamRuneManaCost;
             runeTwo = true;
@@ -177,6 +183,7 @@ public class SummonSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            keyThreeSound.Play();
             manaSlider.value = currentMana;
             //currentMana -= bazRuneManaCost;
             runeThree = true;
@@ -196,7 +203,6 @@ public class SummonSystem : MonoBehaviour
     {
         if (runeVal == 11 && Input.GetKeyDown(KeyCode.Space))
         {
-            
             // REPLENISH MANA / 3 + 2 + 1
             currentMana = maxMana;
             runeOne = false;
@@ -214,6 +220,7 @@ public class SummonSystem : MonoBehaviour
         if(currentMana <= 0 && Input.GetKeyDown(KeyCode.Space) && runeVal != 11)
         {
             // NOT ENOUGH MANA
+            spaceSound.Play();
             runeOne = false;
             runeTwo = false;
             runeThree = false;
@@ -247,26 +254,32 @@ public class SummonSystem : MonoBehaviour
             // SUMMON TORCH GOBLIN / 1 + 2 + 3
             if (runeVal == 35 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
             {
-                if(player.currentLevel < 2)
+                if(player.currentLevel >= 6)
                 {
-                    Instantiate(torchGoblin, transform.position, transform.rotation);
-                }
-                else if(player.currentLevel >= 2)
-                {
-                    Instantiate(torchGoblin, transform.position, transform.rotation);
                     Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlFour, transform.position, transform.rotation);
                 }
                 else if(player.currentLevel >= 4)
                 {
                     Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
                     Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
                     Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
                 }
-                else if(player.currentLevel >= 6)
+                else if(player.currentLevel >= 2)
                 {
-                    Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
-                    Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
-                    Instantiate(torchGoblinLvlFour, transform.position, transform.rotation);
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel < 2)
+                {
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
                 }
                 runeOne = false;
                 runeTwo = false;
@@ -289,25 +302,31 @@ public class SummonSystem : MonoBehaviour
             // SUMMON TNT GOBLIN / 1 + 3 + 2
             if (runeVal == 37 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
             {
-                if(player.currentLevel < 1)
+                if(player.currentLevel >= 5)
                 {
-                Instantiate(TNTGoblin, transform.position, transform.rotation);
-                }
-                else if(player.currentLevel >= 1)
-                {
-                Instantiate(TNTGoblin, transform.position, transform.rotation);
-                Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
+                    Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
+                    Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
+                    Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
+                    Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
+                    Instantiate(TNTGoblinLvlFour, transform.position, transform.rotation);
                 }
                 else if(player.currentLevel >= 3)
                 {
                     Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
+                    Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
                     Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
                 }
-                else if(player.currentLevel >= 5)
+                else if(player.currentLevel >= 1)
                 {
-                    Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
-                    Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
-                    Instantiate(TNTGoblinLvlFour, transform.position, transform.rotation);
+                Instantiate(TNTGoblin, transform.position, transform.rotation);
+                Instantiate(TNTGoblin, transform.position, transform.rotation);
+                Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
+                }
+                else if(player.currentLevel < 1)
+                {
+                Instantiate(TNTGoblin, transform.position, transform.rotation);
+                Instantiate(TNTGoblin, transform.position, transform.rotation);
+                Instantiate(TNTGoblin, transform.position, transform.rotation);
                 }
                 runeOne = false;
                 runeTwo = false;
@@ -330,6 +349,7 @@ public class SummonSystem : MonoBehaviour
             // SUMMON BARREL GOBLIN / 2 + 1 + 3
             if (runeVal == 20 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
             {
+                Instantiate(BarrelGoblin, transform.position, transform.rotation);
                 Instantiate(BarrelGoblin, transform.position, transform.rotation);
                 runeOne = false;
                 runeTwo = false;

@@ -51,6 +51,7 @@ public class TankChase : MonoBehaviour
         if(knightCurrentHealth <= 0f)
         {
             Instantiate(expOrb, transform.position, transform.rotation);
+            Instantiate(expOrb, transform.position, transform.rotation);
             Destroy(gameObject, 0.01f);
         }
     }
