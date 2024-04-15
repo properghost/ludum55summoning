@@ -21,6 +21,8 @@ public class AIChase : MonoBehaviour
     public bool isGoblinAlive;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject expOrb;
+    [SerializeField] private ParticleSystem deathParticles;
+    private bool isAlive;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class AIChase : MonoBehaviour
         healthSlider.maxValue = knightMaxHealth;
         healthSlider.value = knightCurrentHealth;
         knightCurrentHealth = knightMaxHealth;
+        isAlive = true;
     }
     void Update()
     {
@@ -50,10 +53,12 @@ public class AIChase : MonoBehaviour
             Flip();
         }
 
-        if(knightCurrentHealth <= 0f)
+        if(knightCurrentHealth <= 0f && isAlive)
         {
             Instantiate(expOrb, transform.position, transform.rotation);
-            Destroy(gameObject, 0.01f);
+            deathParticles.Play();
+            Destroy(gameObject, 0.2f);
+            isAlive = false;
         }
     }
 
