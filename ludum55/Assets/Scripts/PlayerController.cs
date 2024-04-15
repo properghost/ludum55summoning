@@ -164,6 +164,11 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             currentExperience += 1;
         }
+        else if (other.gameObject.tag == "HpOrb" && playerCurrentHealth <= playerMaxHealth)
+        {
+            Destroy(other.gameObject);
+            playerCurrentHealth += 2f;
+        }
     }
     void FixedUpdate()
     {

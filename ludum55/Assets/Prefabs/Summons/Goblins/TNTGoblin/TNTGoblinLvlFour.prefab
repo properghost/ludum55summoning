@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemySpeed: 5
+  enemySpeed: 4
   distanceBetween: 2
   target: {fileID: 0}
   goblinTNTCurrentHealth: 100

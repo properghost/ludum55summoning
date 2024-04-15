@@ -31,7 +31,7 @@ public class BarelGoblinAI : MonoBehaviour
         healthSlider.maxValue = 100;
         healthSlider.value = goblinMaxHealth;
         particleExplosion = GetComponent<ParticleSystem>();
-        particleExplosion.Stop();
+
     }
     void Update()
     {
@@ -67,7 +67,6 @@ public class BarelGoblinAI : MonoBehaviour
     {
         if (other.gameObject.tag == "TankKnight")
         {
-            particleExplosion.Play();
             Debug.Log("knight touched by knight, should damage");
             target.GetComponent<TankChase>().knightCurrentHealth -= 1f;
         }

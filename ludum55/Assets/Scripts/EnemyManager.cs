@@ -35,8 +35,17 @@ private void Update()
 
     if (gameTime >= 600 && !lvlFive)
     {
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
         SpawnBoss();
-        spawnTimer = 5f;
+        spawnTimer = 20f;
+        waveTimer = 60f;
         lvlFive = true;
         
     }

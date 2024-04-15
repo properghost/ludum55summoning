@@ -9,6 +9,7 @@ TagManager:
   - Loot
   - ExpOrb
   - TankKnight
+  - HpOrb
   layers:
   - Default
   - TransparentFX

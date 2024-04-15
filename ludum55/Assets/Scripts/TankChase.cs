@@ -19,6 +19,7 @@ public class TankChase : MonoBehaviour
     public bool isGoblinAlive;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject expOrb;
+    [SerializeField] private GameObject hpOrb;
     
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class TankChase : MonoBehaviour
 
         if(knightCurrentHealth <= 0f)
         {
+            Instantiate(hpOrb,transform.position, transform.rotation);
             Instantiate(expOrb, transform.position, transform.rotation);
             Instantiate(expOrb, transform.position, transform.rotation);
             Destroy(gameObject, 0.01f);
