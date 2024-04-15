@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if (currentExperience >= 250 && currentLevel == 2)
+        else if (currentExperience >= 200 && currentLevel == 2)
         {
             moveSpeed += 1;
             currentLevel++;
@@ -71,7 +71,23 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-        else if(currentExperience >= 400 && currentLevel == 3)
+        else if(currentExperience >= 300 && currentLevel == 3)
+        {
+            currentLevel++;
+            expSlider.value = currentLevel;
+            summonSystem.maxMana += 10f;
+            playerCurrentHealth += 30f;
+            playerMaxHealth += 10f;
+        }
+        else if(currentExperience >= 400 && currentLevel == 4)
+        {
+            currentLevel++;
+            expSlider.value = currentLevel;
+            summonSystem.maxMana += 10f;
+            playerCurrentHealth += 30f;
+            playerMaxHealth += 10f;
+        }
+        else if(currentExperience >= 500 && currentLevel == 5)
         {
             moveSpeed += 1f;
             currentLevel++;
@@ -80,7 +96,40 @@ public class PlayerController : MonoBehaviour
             playerCurrentHealth += 30f;
             playerMaxHealth += 10f;
         }
-
+        else if(currentExperience >= 600 && currentLevel == 6)
+        {
+            currentLevel++;
+            expSlider.value = currentLevel;
+            summonSystem.maxMana += 10f;
+            playerCurrentHealth += 30f;
+            playerMaxHealth += 10f;
+        }
+        else if(currentExperience >= 700 && currentLevel == 7)
+        {
+            currentLevel++;
+            expSlider.value = currentLevel;
+            summonSystem.maxMana += 10f;
+            playerCurrentHealth += 30f;
+            playerMaxHealth += 10f;
+        }
+        else if(currentExperience >= 800 && currentLevel == 8)
+        {
+            moveSpeed += 0.5f;
+            currentLevel++;
+            expSlider.value = currentLevel;
+            summonSystem.maxMana += 10f;
+            playerCurrentHealth += 30f;
+            playerMaxHealth += 10f;
+        }
+        else if(currentExperience >= 900 && currentLevel == 9)
+        {
+            moveSpeed += 0.5f;
+            currentLevel++;
+            expSlider.value = currentLevel;
+            summonSystem.maxMana += 10f;
+            playerCurrentHealth += 30f;
+            playerMaxHealth += 10f;
+        }
 
     }
 
