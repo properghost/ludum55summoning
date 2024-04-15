@@ -482,7 +482,7 @@ MonoBehaviour:
   spawnTimer: 3
   waveTimer: 20
   player: {fileID: 8458677345345758185}
-  gameTime: 800
+  gameTime: 0
 --- !u!70 &7074256395705223916
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
