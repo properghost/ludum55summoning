@@ -20,11 +20,11 @@ private void Update()
         SpawnEnemy();
         timer = spawnTimer;
     }
-    if (timerTwo < 0f)
-    {
-        InvokeRepeating("DebugMethod", 10f, 0.01f);
-        waveTimer = timerTwo;
-    }
+    // if (timerTwo < 0f)
+    // {
+    //     Invoke("DebugMethod", 10f);
+    //     waveTimer = timerTwo;
+    // }
 }
 private void SpawnEnemy()
     {
@@ -57,12 +57,13 @@ private void SpawnEnemy()
 
         return position;
     }
-    private void TimerTwoReset()
-    {
-        timerTwo = waveTimer;
-    }
-    private void DebugMethod()
-    {
-        Debug.Log("Yarra yedi");
-    }
 }
+//     private void TimerTwoReset()
+//     {
+//         timerTwo = waveTimer;
+//     }
+//     private void DebugMethod()
+//     {
+//         Debug.Log("Yarra yedi");
+//     }
+// }
