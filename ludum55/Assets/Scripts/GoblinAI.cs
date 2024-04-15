@@ -19,10 +19,12 @@ public class GoblinAI : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private GameObject simpleKnight;
     [SerializeField] private float goblinDamager;
+    private bool damagingKnight;
     
     // Start is called before the first frame update
     void Start()
     {
+        damagingKnight = false;
         target = GameObject.FindGameObjectWithTag("Knight").transform;
         player = GameObject.FindGameObjectWithTag("Knight");
         goblinMaxHealth = 100f;
@@ -32,6 +34,10 @@ public class GoblinAI : MonoBehaviour
     }
     void Update()
     {
+        if(goblinCurrentHealth <= 0f)
+        {
+            Destroy(gameObject);
+        }
         goblinCurrentHealth -= Time.deltaTime * healthDecayValue;
         if(player == null)
         {
@@ -52,10 +58,6 @@ public class GoblinAI : MonoBehaviour
             Flip();
         }
 
-        if(goblinCurrentHealth <= 0f)
-        {
-            Destroy(gameObject, 0.01f);
-        }
 
     }
 
@@ -64,10 +66,16 @@ public class GoblinAI : MonoBehaviour
         if (other.gameObject.tag == "Knight")
         {
             Debug.Log("knight touched by knight, should damage");
-            target.GetComponent<AIChase>().knightCurrentHealth -= goblinDamager;
+            damagingKnight = true;
+            if(damagingKnight)
+            {
+                target.GetComponent<AIChase>().knightCurrentHealth -= goblinDamager;
+            }
         }
+        else{ damagingKnight = false;};
         
     }
+            
    
     void FixedUpdate()
     {
