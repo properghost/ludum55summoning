@@ -413,11 +413,12 @@ MonoBehaviour:
   enemySpeed: 6.1
   distanceBetween: 0.5
   target: {fileID: 511923000228732587, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
-  knightMaxHealth: 50000
-  knightCurrentHealth: 50000
+  knightMaxHealth: 20000
+  knightCurrentHealth: 20000
   healthSlider: {fileID: 4967322013111577006}
   torchGoblin: {fileID: 509376218994446940, guid: f31b8736fecd72948afb5acfe66041fd, type: 3}
   isGoblinAlive: 0
+  isLastBoss: 1
   player: {fileID: 5496722659159951761, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
   expOrb: {fileID: 6024510054790565191, guid: 222bb5357f7d51043b17dd9eb555e36c, type: 3}
 --- !u!70 &2204131305405811641
