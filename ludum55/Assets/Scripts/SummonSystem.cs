@@ -229,6 +229,21 @@ public class SummonSystem : MonoBehaviour
 
         if (runeOne && runeTwo && runeThree)
         {
+            // FAILSAFE
+            if(runeVal != 35 && runeVal != 37 && runeVal != 20 && runeVal != 10 && runeVal != 17 && runeVal != 11 && Input.GetKeyDown(KeyCode.Space))
+            {
+                runeOne = false;
+                runeTwo = false;
+                runeThree = false;
+                alRune = false;
+                gamRune = false;
+                bazRune = false;
+                alRuneUsed = false;
+                gamRuneUsed = false;
+                bazRuneUsed = false;
+
+                runeVal = 1f;
+            }
             // SUMMON TORCH GOBLIN / 1 + 2 + 3
             if (runeVal == 35 && Input.GetKeyDown(KeyCode.Space) && currentMana >= 0)
             {
