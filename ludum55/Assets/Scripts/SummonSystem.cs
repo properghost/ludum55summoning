@@ -249,18 +249,23 @@ public class SummonSystem : MonoBehaviour
             {
                 if(player.currentLevel < 2)
                 {
-                Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
                 }
                 else if(player.currentLevel >= 2)
                 {
-                Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
                 }
                 else if(player.currentLevel >= 4)
                 {
+                    Instantiate(torchGoblin, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlTwo, transform.position, transform.rotation);
                     Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
                 }
                 else if(player.currentLevel >= 6)
                 {
+                    Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
+                    Instantiate(torchGoblinLvlThree, transform.position, transform.rotation);
                     Instantiate(torchGoblinLvlFour, transform.position, transform.rotation);
                 }
                 runeOne = false;
@@ -290,14 +295,18 @@ public class SummonSystem : MonoBehaviour
                 }
                 else if(player.currentLevel >= 1)
                 {
+                Instantiate(TNTGoblin, transform.position, transform.rotation);
                 Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
                 }
                 else if(player.currentLevel >= 3)
                 {
+                    Instantiate(TNTGoblinLvlTwo, transform.position, transform.rotation);
                     Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
                 }
                 else if(player.currentLevel >= 5)
                 {
+                    Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
+                    Instantiate(TNTGoblinLvlThree, transform.position, transform.rotation);
                     Instantiate(TNTGoblinLvlFour, transform.position, transform.rotation);
                 }
                 runeOne = false;
