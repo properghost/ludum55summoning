@@ -476,12 +476,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4278593441355326603, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
+  simpleKnightSpeedModifier: {fileID: 8719121629858320273, guid: d0b21a8ebfee18c40b91beff3be8e7d2, type: 3}
   endBoss: {fileID: 4278593441355326603, guid: f92c946d193a4614c89c92fb36f02bad, type: 3}
   spawnArea: {x: 20, y: 20}
   spawnTimer: 3
   waveTimer: 20
   player: {fileID: 8458677345345758185}
-  gameTime: 0
+  gameTime: 800
 --- !u!70 &7074256395705223916
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -545,7 +546,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5ca40644b4e59e0409e04764ad6a1485, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.326
+  m_Volume: 0.253
   m_Pitch: 1
   Loop: 0
   Mute: 0

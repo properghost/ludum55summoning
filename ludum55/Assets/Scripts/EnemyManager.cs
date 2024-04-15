@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnemyManager : MonoBehaviour
 {
 [SerializeField] GameObject enemy;
+[SerializeField] private AIChase simpleKnightSpeedModifier;
 [SerializeField] GameObject endBoss;
 [SerializeField] Vector2 spawnArea;
 [SerializeField] float spawnTimer;
@@ -22,10 +23,13 @@ private bool lvlFive;
 private bool lvlSix;
 private bool lvlSeven;
 private bool lvlEight;
+private bool lvlNine;
+private bool lvlTen;
 
 
 private void Start()
 {
+    simpleKnightSpeedModifier = GetComponent<AIChase>();
     timerTwo = waveTimer;
     lvlOne = false;
     lvlTwo = false;
@@ -36,17 +40,42 @@ private void Start()
     lvlSix = false;
     lvlSeven = false;
     lvlEight = false;
+    lvlNine = false;
+    lvlTen = false;
 }
 private void Update()
 {
     gameTime += Time.deltaTime;
 
-    if (gameTime >= 860 && !lvlEight)
+    if (gameTime >= 1040 && !lvlTen)
     {
         SpawnBoss();
         SpawnBoss();
         SpawnBoss();
-        spawnTimer -= 0.2f;
+        waveTimer += 3f;
+        simpleKnightSpeedModifier.enemySpeed += 0.4f;
+        lvlNine = true;
+    }
+    else if (gameTime >= 920 && !lvlNine)
+    {
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        SpawnEnemy();
+        simpleKnightSpeedModifier.enemySpeed += 0.2f;
+        lvlNine = true;
+    } 
+    else if (gameTime >= 860 && !lvlEight)
+    {
+        SpawnBoss();
+        SpawnBoss();
+        SpawnBoss();
+        spawnTimer -= 0.1f;
+        waveTimer += 3f;
+        simpleKnightSpeedModifier.enemySpeed += 0.3f;
         lvlEight = true;
     }
     else if(gameTime >= 720 && !lvlSeven)
@@ -54,6 +83,8 @@ private void Update()
         SpawnBoss();
         SpawnBoss();
         spawnTimer -= 0.1f;
+        waveTimer += 3f;
+        simpleKnightSpeedModifier.enemySpeed += 0.1f;
         lvlSeven = true;
     }
     else if(gameTime >= 600 && !lvlSix)
@@ -65,6 +96,7 @@ private void Update()
         SpawnEnemy();
         SpawnEnemy();
         SpawnEnemy();
+        waveTimer += 3f;
         lvlSix = true;
     }
     else if (gameTime >= 480 && !lvlFive)
@@ -78,16 +110,19 @@ private void Update()
         SpawnEnemy();
         SpawnEnemy();
         SpawnBoss();
+        simpleKnightSpeedModifier.enemySpeed += 0.2f;
         lvlFive = true;
         
     }
     else if (gameTime >= 420 && !lvlFour)
     {
+        simpleKnightSpeedModifier.enemySpeed += 0.2f;
         spawnTimer -= 1f;
         lvlFour = true;
     }
     else if (gameTime >= 360 && !lvlThree)
     {
+        simpleKnightSpeedModifier.enemySpeed += 0.3f;
         spawnTimer -= .5f;
         lvlThree = true;
     }
@@ -98,6 +133,7 @@ private void Update()
     }
     else if(gameTime >= 60 && !lvlOne)
     {
+        simpleKnightSpeedModifier.enemySpeed += 0.1f;
         spawnTimer -= 0.1f;
         lvlOne = true;
     }
