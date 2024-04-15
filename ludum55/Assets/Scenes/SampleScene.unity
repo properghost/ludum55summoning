@@ -121306,6 +121306,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2850746144326389847, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: spawnArea.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850746144326389847, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: spawnArea.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511548118309792465, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: endBoss
+      value: 
+      objectReference: {fileID: 4278593441355326603, guid: f92c946d193a4614c89c92fb36f02bad, type: 3}
+    - target: {fileID: 3511548118309792465, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: waveTimer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511548118309792465, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: spawnArea.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511548118309792465, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: spawnArea.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3530400006816436324, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

@@ -51,30 +51,21 @@ private void Update()
         SpawnEnemy();
         timer = spawnTimer;
     }
-    if (timerTwo < 0f)
-    {
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        SpawnEnemy();
-        timerTwo = waveTimer;
-    }
+
+    // if (timerTwo < 0f)
+    // {
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     SpawnEnemy();
+    //     timerTwo = waveTimer;
+    // }
 }
 private void SpawnEnemy()
     {
