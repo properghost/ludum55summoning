@@ -120871,6 +120871,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869296274}
     - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: TNTGoblinLvlTwo
+      value: 
+      objectReference: {fileID: 7785498356705102519, guid: 8c29fbb8879656642bd2c3327967bd92, type: 3}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: TNTGoblinLvlFour
+      value: 
+      objectReference: {fileID: 7785498356705102519, guid: 67be95350e2716b409168e236e03abe2, type: 3}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
+      propertyPath: TNTGoblinLvlThree
+      value: 
+      objectReference: {fileID: 7785498356705102519, guid: 343ce0ae73d561b49975d53f05aa2d26, type: 3}
+    - target: {fileID: 5213652704483032093, guid: 3efb8fd29d04de646880cf5f844cd481, type: 3}
       propertyPath: torchGoblinLvlFour
       value: 
       objectReference: {fileID: 509376218994446940, guid: 85d7f48330641bf4883b1c39ec0c9302, type: 3}
