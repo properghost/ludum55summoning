@@ -1252,8 +1252,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER!
-    GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! '
+  m_text: 'PHOST.DLL // PHOST.DLL // PHOST.DLL // PHOST.DLL // PHOST.DLL // PHOST.DLL
+    // PHOST.DLL // PHOST.DLL // PHOST.DLL // PHOST.DLL // PHOST.DLL // PHOST.DLL
+    // '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72a3df66a4045334dac866a427bfb32f, type: 2}
   m_sharedMaterial: {fileID: -7942546817858517480, guid: 72a3df66a4045334dac866a427bfb32f, type: 2}
@@ -1316,7 +1317,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -2473.2427, y: -21.080557, z: -11279.576, w: -139.28662}
+  m_margin: {x: -2473.2427, y: -21.080557, z: -11919.386, w: -139.28662}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1638,8 +1639,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER!
-    GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! GOBLIMANCER! '
+  m_text: 'ASRATA // ASRATA // ASRATA // ASRATA // ASRATA // ASRATA // ASRATA //
+    ASRATA // ASRATA // ASRATA // ASRATA // ASRATA // ASRATA // ASRATA // '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72a3df66a4045334dac866a427bfb32f, type: 2}
   m_sharedMaterial: {fileID: -7942546817858517480, guid: 72a3df66a4045334dac866a427bfb32f, type: 2}
