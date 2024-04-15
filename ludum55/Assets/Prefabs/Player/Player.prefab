@@ -437,6 +437,7 @@ MonoBehaviour:
   keyTwoSound: {fileID: 4523928894757375264}
   keyThreeSound: {fileID: 7291796050701889686}
   player: {fileID: 5223377650840911763}
+  gameManager: {fileID: 0}
   alRuneImage: {fileID: 0}
   gamRuneImage: {fileID: 0}
   bazRuneImage: {fileID: 0}
@@ -480,6 +481,7 @@ MonoBehaviour:
   spawnTimer: 3
   waveTimer: 20
   player: {fileID: 8458677345345758185}
+  gameTime: 0
 --- !u!70 &7074256395705223916
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -529,7 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4278593441355326603, guid: 220877bff83a4124391b8b838a4048fa, type: 3}
   spawnArea: {x: 10, y: 10}
-  spawnTimer: 10
+  spawnTimer: 15
   player: {fileID: 8458677345345758185}
 --- !u!82 &2348192955979882410
 AudioSource:

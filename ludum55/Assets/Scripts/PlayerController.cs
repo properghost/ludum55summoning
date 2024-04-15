@@ -42,9 +42,9 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("1");
+            SceneManager.LoadScene(1);
         }
         healthSlider.maxValue = playerMaxHealth;
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))

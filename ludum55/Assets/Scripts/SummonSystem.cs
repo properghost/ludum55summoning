@@ -11,6 +11,7 @@ public class SummonSystem : MonoBehaviour
     [SerializeField] private AudioSource keyTwoSound;
     [SerializeField] private AudioSource keyThreeSound;
     [SerializeField] private PlayerController player;
+    [SerializeField] private GameManager gameManager;
     //Rune One
     private bool runeOne;
     private bool alRune;
@@ -152,7 +153,7 @@ public class SummonSystem : MonoBehaviour
         {
             boostSpeedPNG.enabled= false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !gameManager.isPaused)
         {
             keyOneSound.Play();
             manaSlider.value = currentMana;
@@ -167,7 +168,7 @@ public class SummonSystem : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !gameManager.isPaused)
         {
             keyTwoSound.Play();
             manaSlider.value = currentMana;
@@ -182,7 +183,7 @@ public class SummonSystem : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && !gameManager.isPaused)
         {
             keyThreeSound.Play();
             manaSlider.value = currentMana;
